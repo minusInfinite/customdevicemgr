@@ -6,22 +6,50 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./styles/geotab-styles.css">
   <title>customdevicemgr</title>
 </head>
 
 <body>
 
-  <div id="customdevicemgr-app" >
-    
-      <div id="customdevicemgr">
-        <header class="geotabPageHeader">
-          <h1 class="geotabPageName">customdevicemgr <span class="subdued">subtitle</span></h1>
-          <div class="pageNameSecondary">
-            <h3 class="geotabSecondaryTitle">by: <span id="customdevicemgr-user"></span></h3>
-          </div>
-        </header>
-      </div>
-    
+  <div id="customdevicemgr-app">
+
+    <div id="customdevicemgr">
+      <header class="geotabPageHeader">
+        <h1 class="geotabPageName">customdevicemgr <span class="subdued">subtitle</span></h1>
+        <div class="pageNameSecondary">
+          <h2 class="geotabSecondaryTitle">by: <span id="customdevicemgr-user"></span></h3>
+        </div>
+      </header>
+      <section>
+        <div id="customdevicemgr-error"></div>
+        <table class="customdevicemgr-table entities-list inventory-table ">
+          <thead class="customdevicemgr-table__header entities-list__header">
+            <tr class="customdevicemgr-table__header-row entities-list__header-row">
+              <th scope="col" class="entities-list__header-cell entities-list__header-cell--first">
+                <div class="entities-list__header-cell-content flexible-column__content">Asset</div>
+              </th>
+              <th scope="col" class="entities-list__header-cell entities-list__header-cell--first">
+                <div class="entities-list__header-cell-content flexible-column__content">Serial Number</div>
+              </th>
+              <th scope="col" class="entities-list__header-cell entities-list__header-cell">
+                <div class="entities-list__header-cell-content flexible-column__content">Odometer</div>
+              </th>
+              <th scope="col" class="entities-list__header-cell entities-list__header-cell">
+                <div class="entities-list__header-cell-content flexible-column__content">Engine Hours</div>
+              </th>
+              <th scope="col" class="entities-list__header-cell entities-list__header-cell">
+                <div class=" entities-list__header-cell-content flexible-column__content">Submit</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="customdevicemgr-table__body">
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+
   </div>
 
 </body>

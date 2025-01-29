@@ -45,4 +45,4 @@ const logger = (addinName) => (
   }
 );
 
-export default logger;
+module.exports = logger;

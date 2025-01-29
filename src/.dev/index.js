@@ -18,13 +18,13 @@
 global.api
 global.state = require('./state');
 global.geotab = {
-    addin: {}, 
-    customButtons: {}, 
+    addin: {},
+    customButtons: {},
     isDriveAddin: false
 }
 // Importing the app rules -> Where addin will be described
 
-require('../app/scripts/main');
+require('../app/scripts/main.js');
 
 // Importing dev-specific packages
 import './rison';
@@ -42,16 +42,16 @@ let language = localStorage.language ? localStorage.language : 'en';
 global.translator = new Translator('#customdevicemgr', language);
 
 // Global Translate function
-global.state.translate = function(target, language) {
-    
+global.state.translate = function (target, language) {
+
     // First translation from initialize doesn't pass a language in. Will cause problems is language is undefined
-    if (typeof language !== 'undefined'){
+    if (typeof language !== 'undefined') {
         localStorage.language = language;
         location.reload();
     }
 
     // Primary behaviour passes HTMLElement, but function needs to support string translation as well
-    if (typeof target === 'string'){
+    if (typeof target === 'string') {
         // Do translation
         let translation = global.translator.translateSentence(target);
         // return translated string
@@ -72,7 +72,7 @@ import GroupListeners from './groups/GroupListeners.js';
 let groupListener = new GroupListeners(global.api, global.state, 'original_filter', 'filter-dropdown', 'group-dropdown', 'group-input', 'group-toggle-button', 'group-remove-all', 'active-group');
 groupListener.assignEventListeners();
 
-import'./advancedGroupFilter/advancedGroupFilter.js'
+import './advancedGroupFilter/advancedGroupFilter.js'
 import AdvancedGroupFilterListener from './advancedGroupFilter/advancedGroupFilterListener.js';
 let filterListener = new AdvancedGroupFilterListener()
 filterListener.assignListeners()

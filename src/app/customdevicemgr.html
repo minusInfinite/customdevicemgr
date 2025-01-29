@@ -14,39 +14,43 @@
 
   <div id="customdevicemgr-app">
 
-    <div id="customdevicemgr">
-      <header class="geotabPageHeader">
-        <h1 class="geotabPageName">customdevicemgr <span class="subdued">subtitle</span></h1>
+    <div id="customdevicemgr" class="geotab-page geo-page inventory-page">
+      <header class="geo-page__header">
+        <h1 class="geo-header__page-name">Custom Device Manager</h1>
         <div class="pageNameSecondary">
           <h2 class="geotabSecondaryTitle">by: <span id="customdevicemgr-user"></span></h3>
         </div>
       </header>
-      <section>
+      <section class="geo-page__content page-content geo-page--initial-overflow">
         <div id="customdevicemgr-error"></div>
-        <table class="customdevicemgr-table entities-list inventory-table ">
-          <thead class="customdevicemgr-table__header entities-list__header">
-            <tr class="customdevicemgr-table__header-row entities-list__header-row">
-              <th scope="col" class="entities-list__header-cell entities-list__header-cell--first">
-                <div class="entities-list__header-cell-content flexible-column__content">Asset</div>
-              </th>
-              <th scope="col" class="entities-list__header-cell entities-list__header-cell--first">
-                <div class="entities-list__header-cell-content flexible-column__content">Serial Number</div>
-              </th>
-              <th scope="col" class="entities-list__header-cell entities-list__header-cell">
-                <div class="entities-list__header-cell-content flexible-column__content">Odometer</div>
-              </th>
-              <th scope="col" class="entities-list__header-cell entities-list__header-cell">
-                <div class="entities-list__header-cell-content flexible-column__content">Engine Hours</div>
-              </th>
-              <th scope="col" class="entities-list__header-cell entities-list__header-cell">
-                <div class=" entities-list__header-cell-content flexible-column__content">Submit</div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="customdevicemgr-table__body">
+        <div class="page-content__main">
+          <div class="entities-list inventory-table">
+            <table class="customdevicemgr-table entities-list__table">
+              <thead class="entities-list__header">
+                <tr class="entities-list__header-row">
+                  <th scope="col" class="entities-list__header-cell entities-list__header-cell--first">
+                    <div class="entities-list__header-cell-content flexible-column__content">Asset</div>
+                  </th>
+                  <th scope="col" class="entities-list__header-cell entities-list__header-cell">
+                    <div class="entities-list__header-cell-content flexible-column__content">Serial Number</div>
+                  </th>
+                  <th scope="col" class="entities-list__header-cell entities-list__header-cell">
+                    <div class="entities-list__header-cell-content flexible-column__content">Odometer (km)</div>
+                  </th>
+                  <th scope="col" class="entities-list__header-cell entities-list__header-cell">
+                    <div class="entities-list__header-cell-content flexible-column__content">Engine Hours (hrs)</div>
+                  </th>
+                  <th scope="col" class="entities-list__header-cell entities-list__header-cell">
+                    <div class=" entities-list__header-cell-content flexible-column__content">Submit</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="customdevicemgr-table__body">
 
-          </tbody>
-        </table>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
     </div>
 

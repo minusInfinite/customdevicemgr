@@ -7,10 +7,11 @@
 // Allowing babel to work with older versions of IE
 const regeneratorRuntime = require('regenerator-runtime');
 
-if(!geotab.addin.customdevicemgr){
-    
-    require('./scripts/main');
-    
+if (!geotab.addin.customdevicemgr) {
+
+    require('./scripts/main.js');
+    require('./scripts/utils/logger.js');
+
 }
 
 require('./styles/main.css');

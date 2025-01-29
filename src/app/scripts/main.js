@@ -1,3 +1,4 @@
+const logger = require('./utils/logger.js')
 /**
  * @returns {{initialize: Function, focus: Function, blur: Function, startup; Function, shutdown: Function}}
  */
@@ -5,6 +6,8 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
   'use strict';
   const appName = 'customdevicemgr';
   const addinId = 'ajliNjUxOGEtZWQzMC1lOWF';
+
+
 
   /**@type {HTMLTableSectionElement}*/
   let elDeviceTableBody
@@ -32,6 +35,45 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
     }
   }
 
+  let getStatusData = async (deviceId) => {
+    const nowISO = new Date().toISOString()
+    return new Promise((resolve, reject) => {
+      api.multiCall([['Get', {
+        typeName: 'StatusData',
+        search: {
+          'deviceSearch': {
+            'id': deviceId
+          },
+          'diagnosticSearch': {
+            'id': 'DiagnosticEngineHoursAdjustmentId'
+          },
+          'fromDate': nowISO,
+          'toDate': nowISO
+        }
+      }], ['Get', {
+        typeName: 'StatusData',
+        search: {
+          'deviceSearch': {
+            'id': deviceId
+          },
+          'diagnosticSearch': {
+            'id': 'DiagnosticOdometerAdjustmentId'
+          },
+          'fromDate': nowISO,
+          'toDate': nowISO
+        }
+
+      }]], function (result) {
+        let ehData = result[0][0].data ? result[0][0].data : 0,
+          odoData = result[1][0].data ? result[1][0].data : 0;
+
+
+
+        resolve({ engineHours: ehData, odometer: odoData })
+      }, reject)
+    })
+  }
+
   // the root container
   var elAddin = document.getElementById(appName);
 
@@ -49,8 +91,6 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
      */
     initialize: function (freshApi, freshState, initializeCallback) {
       api = freshApi;
-
-
 
       elDeviceTableBody = elAddin.querySelector('.customdevicemgr-table__body')
 
@@ -88,11 +128,12 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
       // show main content
       freshApi.call('Get', {
         typeName: 'Device',
+        resultsLimit: 10,
         search: {
           fromDate: new Date().toISOString(),
           groups: freshState.getGroupFilter(),
           deviceType: 'CustomDevice'
-        }
+        },
       }, async (devices) => {
         if (!devices || devices.length < 1) {
           return;
@@ -101,50 +142,49 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
         devices.sort(sortNameEntities)
 
 
-        for (let device of devices) {
+        for (let i = 0; i < devices.length; i++) {
+          let device = devices[i]
+          console.log(i)
           const newRow = elDeviceTableBody.insertRow()
-          let StatusData = await freshApi.multiCall([['Get', {
-            typeName: 'StatusData',
-            search: {
-              'deviceSearch': {
-                'id': device.id
-              },
-              'diagnosticSearch': {
-                'id': 'DiagnosticEngineHoursAdjustmentId'
-              },
-              'fromDate': nowISO,
-              'toDate': nowISO
-            }
-          }], ['Get', {
-            typeName: 'StatusData',
-            search: {
-              'deviceSearch': {
-                'id': device.id
-              },
-              'diagnosticSearch': {
-                'id': 'DiagnosticOdometerAdjustmentId'
-              },
-              'fromDate': nowISO,
-              'toDate': nowISO
-            }
-          }]])
+          let assetCell = newRow.insertCell()
+          let snCell = newRow.insertCell()
+          let snContent = document.createElement('div')
+          let odoCell = newRow.insertCell()
+          let odoContent = document.createElement('div')
+          let ehCell = newRow.insertCell()
+          let ehContent = document.createElement('div')
+          let submitCell = newRow.insertCell()
 
-          console.log(StatusData)
+          const { engineHours, odometer } = await getStatusData(device.id)
 
-          //let ehFilter = statusInfo[0].statusData.filter(d => d.diagnostic.id === 'DiagnosticEngineHoursAdjustmentId')
-          //let odoFilter = statusInfo[0].statusData.filter(d => d.diagnostic.id === 'DiagnosticOdometerAdjustmentId')
+          if (i === 0) {
+            newRow.dataset.rowId = device.id
+            newRow.classList.add('entities-list__row', 'entities-list__row--first')
+          } else if (i > 0 && i < devices.length - 1) {
+            newRow.dataset.rowId = device.id
+            newRow.classList.add('entities-list__row',)
+          } else {
+            newRow.dataset.rowId = device.id
+            newRow.classList.add('entities-list__row', 'entities-list__row-cell--last',)
+          }
 
-          newRow.dataset.rowId = device.id
-          newRow.classList.add('entities-list__row')
-          newRow.insertCell().innerText = device.name
-          newRow.insertCell().innerText = device.serialNumber
-          //newRow.insertCell().innerText = ehFilter.data * 60 * 60
-          //newRow.insertCell().innerText = odoFilter.data * 1000
-
+          assetCell.classList.add('entities-list__row-cell', 'entities-list__row-cell--first', 'inventory-main-column__name', 'ellipsis')
+          assetCell.innerText = device.name
+          snCell.classList.add('entities-list__row-cell', 'ellipsis')
+          snContent.classList.add('list-column-text')
+          snContent.innerText = device.serialNumber
+          snCell.appendChild(snContent)
+          odoCell.classList.add('entities-list__row-cell', 'ellipsis')
+          odoContent.classList.add('list-column-numeric')
+          odoContent.innerText = `${Math.ceil(odometer / 1000)}`
+          odoCell.appendChild(odoContent)
+          ehCell.classList.add('entities-list__row-cell', 'ellipsis')
+          ehContent.classList.add('list-column-numeric')
+          ehContent.innerText = `${Math.floor(engineHours / 60 / 60)}`
+          ehCell.appendChild(ehContent)
+          submitCell.classList.add('entities-list__row-cell', 'entities-list__row-cell--last', 'ellipsis')
+          submitCell.innerText = 'Submit'
         }
-
-
-
       })
     },
 
@@ -157,7 +197,7 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
      * @param {Object} freshState - The page state object allows access to URL, page navigation and global group filter.
     */
     blur: function () {
-
+      elAddin.style.display = 'none';
     }
   };
 };

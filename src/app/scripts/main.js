@@ -92,7 +92,7 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
     initialize: function (freshApi, freshState, initializeCallback) {
       api = freshApi;
 
-      elDeviceTableBody = elAddin.querySelector('.customdevicemgr-table__body')
+      elDeviceTableBody = document.querySelector('.customdevicemgr-table__body')
 
       // Loading translations if available
       if (freshState.translate) {
@@ -116,6 +116,7 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
      * @param {Object} freshState - The page state object allows access to URL, page navigation and global group filter.
     */
     focus: function (freshApi, freshState) {
+      elAddin.style.display = 'initial';
       const nowISO = new Date().toISOString()
       // getting the current user to display in the UI
 
@@ -144,16 +145,16 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
 
         for (let i = 0; i < devices.length; i++) {
           let device = devices[i]
-          console.log(i)
           const newRow = elDeviceTableBody.insertRow()
           let assetCell = newRow.insertCell()
           let snCell = newRow.insertCell()
           let snContent = document.createElement('div')
           let odoCell = newRow.insertCell()
-          let odoContent = document.createElement('div')
+          let odoContent = document.createElement('input')
           let ehCell = newRow.insertCell()
-          let ehContent = document.createElement('div')
+          let ehContent = document.createElement('input')
           let submitCell = newRow.insertCell()
+          let submitButton = document.createElement('button')
 
           const { engineHours, odometer } = await getStatusData(device.id)
 
@@ -175,15 +176,18 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
           snContent.innerText = device.serialNumber
           snCell.appendChild(snContent)
           odoCell.classList.add('entities-list__row-cell', 'ellipsis')
-          odoContent.classList.add('list-column-numeric')
-          odoContent.innerText = `${Math.ceil(odometer / 1000)}`
+          odoContent.classList.add('list-column-numeric', 'geotabFormEditField')
+          odoContent.type = 'number'
+          odoContent.value = Math.ceil(odometer / 1000)
           odoCell.appendChild(odoContent)
           ehCell.classList.add('entities-list__row-cell', 'ellipsis')
-          ehContent.classList.add('list-column-numeric')
-          ehContent.innerText = `${Math.floor(engineHours / 60 / 60)}`
+          ehContent.classList.add('list-column-numeric', 'geotabFormEditField')
+          ehContent.value = Math.floor(engineHours / 60 / 60)
           ehCell.appendChild(ehContent)
           submitCell.classList.add('entities-list__row-cell', 'entities-list__row-cell--last', 'ellipsis')
-          submitCell.innerText = 'Submit'
+          submitButton.classList.add('geo-button', 'geo-button--action')
+          submitButton.innerText = 'Update'
+          submitCell.appendChild(submitButton)
         }
       })
     },
@@ -197,7 +201,12 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
      * @param {Object} freshState - The page state object allows access to URL, page navigation and global group filter.
     */
     blur: function () {
-      elAddin.style.display = 'none';
+      elDeviceTableBody = elAddin.querySelector('.customdevicemgr-table__body')
+
+      for (let i = elDeviceTableBody.rows.length; i !== 0; i--) {
+        elDeviceTableBody.deleteRow(-1)
+      }
+      elAddin.style.display = 'none'
     }
   };
 };

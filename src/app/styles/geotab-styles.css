@@ -1129,7 +1129,7 @@
 }
 
 .nonClickable,
-.svgIcon > use {
+.svgIcon>use {
     pointer-events: none
 }
 
@@ -1935,8 +1935,8 @@
     clip: rect(1px, 1px, 1px, 1px)
 }
 
-.geo-navigator-list__action:active:checked + .geo-navigator-list__content:hover .geo-navigator-list__icon--gray,
-.geo-navigator-list__action:checked:active + .geo-navigator-list__content .geo-navigator-list__icon--gray {
+.geo-navigator-list__action:active:checked+.geo-navigator-list__content:hover .geo-navigator-list__icon--gray,
+.geo-navigator-list__action:checked:active+.geo-navigator-list__content .geo-navigator-list__icon--gray {
     fill: #66788c
 }
 
@@ -1996,7 +1996,7 @@
     pointer-events: none
 }
 
-.geo-navigator-list__header > .geo-navigator-list__header {
+.geo-navigator-list__header>.geo-navigator-list__header {
     display: flex;
     align-items: center;
     width: 100%;
@@ -2018,57 +2018,57 @@
     color: #0078d3
 }
 
-.geo-navigator-list__action:focus + .geo-navigator-list__content,
-.geo-navigator-list__action:hover + .geo-navigator-list__content {
+.geo-navigator-list__action:focus+.geo-navigator-list__content,
+.geo-navigator-list__action:hover+.geo-navigator-list__content {
     background-color: #eff2f7
 }
 
-.geo-navigator-list__action:active + .geo-navigator-list__content {
+.geo-navigator-list__action:active+.geo-navigator-list__content {
     background-color: #0078d3;
     color: #fff
 }
 
-.geo-navigator-list__action:active + .geo-navigator-list__content .geo-navigator-list__icon--gray {
+.geo-navigator-list__action:active+.geo-navigator-list__content .geo-navigator-list__icon--gray {
     fill: #fff
 }
 
-.geo-navigator-list__action:checked + .geo-navigator-list__content {
+.geo-navigator-list__action:checked+.geo-navigator-list__content {
     background-color: #0078d3;
     color: #fff
 }
 
-.geo-navigator-list__action:checked + .geo-navigator-list__content .geo-navigator-list__icon,
-.geo-navigator-list__action:checked + .geo-navigator-list__content .geo-navigator-list__icon--check-icon,
-.geo-navigator-list__action:checked + .geo-navigator-list__content .geo-navigator-list__icon--gray {
+.geo-navigator-list__action:checked+.geo-navigator-list__content .geo-navigator-list__icon,
+.geo-navigator-list__action:checked+.geo-navigator-list__content .geo-navigator-list__icon--check-icon,
+.geo-navigator-list__action:checked+.geo-navigator-list__content .geo-navigator-list__icon--gray {
     fill: #fff
 }
 
-.geo-navigator-list__action:checked + .geo-navigator-list__content--focused,
-.geo-navigator-list__action:checked + .geo-navigator-list__content:hover,
-.geo-navigator-list__action:checked:focus + .geo-navigator-list__content {
+.geo-navigator-list__action:checked+.geo-navigator-list__content--focused,
+.geo-navigator-list__action:checked+.geo-navigator-list__content:hover,
+.geo-navigator-list__action:checked:focus+.geo-navigator-list__content {
     background-color: #005aa8;
     color: #fff
 }
 
-.geo-navigator-list__action:checked + .geo-navigator-list__content--focused .geo-navigator-list__icon,
-.geo-navigator-list__action:checked + .geo-navigator-list__content--focused .geo-navigator-list__icon--check-icon,
-.geo-navigator-list__action:checked + .geo-navigator-list__content--focused .geo-navigator-list__icon--gray,
-.geo-navigator-list__action:checked + .geo-navigator-list__content:hover .geo-navigator-list__icon,
-.geo-navigator-list__action:checked + .geo-navigator-list__content:hover .geo-navigator-list__icon--check-icon,
-.geo-navigator-list__action:checked + .geo-navigator-list__content:hover .geo-navigator-list__icon--gray,
-.geo-navigator-list__action:checked:focus + .geo-navigator-list__content .geo-navigator-list__icon,
-.geo-navigator-list__action:checked:focus + .geo-navigator-list__content .geo-navigator-list__icon--check-icon,
-.geo-navigator-list__action:checked:focus + .geo-navigator-list__content .geo-navigator-list__icon--gray {
+.geo-navigator-list__action:checked+.geo-navigator-list__content--focused .geo-navigator-list__icon,
+.geo-navigator-list__action:checked+.geo-navigator-list__content--focused .geo-navigator-list__icon--check-icon,
+.geo-navigator-list__action:checked+.geo-navigator-list__content--focused .geo-navigator-list__icon--gray,
+.geo-navigator-list__action:checked+.geo-navigator-list__content:hover .geo-navigator-list__icon,
+.geo-navigator-list__action:checked+.geo-navigator-list__content:hover .geo-navigator-list__icon--check-icon,
+.geo-navigator-list__action:checked+.geo-navigator-list__content:hover .geo-navigator-list__icon--gray,
+.geo-navigator-list__action:checked:focus+.geo-navigator-list__content .geo-navigator-list__icon,
+.geo-navigator-list__action:checked:focus+.geo-navigator-list__content .geo-navigator-list__icon--check-icon,
+.geo-navigator-list__action:checked:focus+.geo-navigator-list__content .geo-navigator-list__icon--gray {
     fill: #fff
 }
 
-.geo-navigator-list__action:checked:active + .geo-navigator-list__content {
+.geo-navigator-list__action:checked:active+.geo-navigator-list__content {
     background-color: #fff;
     color: #1f2833;
     fill: #fff
 }
 
-.geo-navigator-list__action:disabled + .geo-navigator-list__content {
+.geo-navigator-list__action:disabled+.geo-navigator-list__content {
     pointer-events: none;
     background-color: #fff;
     color: #eff2f7
@@ -2316,35 +2316,35 @@
     clip: rect(1px, 1px, 1px, 1px)
 }
 
-.geotabSwitchButton[disabled] + .geotabButton {
+.geotabSwitchButton[disabled]+.geotabButton {
     opacity: .35;
     cursor: default
 }
 
-.geotabSwitchButton[disabled] + .geotabButton:active,
-.geotabSwitchButton[disabled] + .geotabButton:hover {
+.geotabSwitchButton[disabled]+.geotabButton:active,
+.geotabSwitchButton[disabled]+.geotabButton:hover {
     border-color: #c5dbec;
     background-color: #e8f3fd;
     color: #25477b;
     fill: #25477b
 }
 
-.geotabSwitchButton:checked + .geotabButton {
+.geotabSwitchButton:checked+.geotabButton {
     color: #fff;
     fill: #fff;
     border-color: #2c7ab1;
     background-color: #2c7ab1
 }
 
-.geotabSwitchButton:focus:not(:checked) + .geotabButton {
+.geotabSwitchButton:focus:not(:checked)+.geotabButton {
     border-color: #5293c6;
     background: #d1e7fb;
     color: #25477b;
     fill: #25477b
 }
 
-.geotabSwitchButton:focus:checked + .geotabButton,
-.geotabSwitchButton:hover:checked + .geotabButton {
+.geotabSwitchButton:focus:checked+.geotabButton,
+.geotabSwitchButton:hover:checked+.geotabButton {
     border-color: #25477b;
     background-color: #246390;
     color: #fff;
@@ -2358,8 +2358,8 @@
     position: relative
 }
 
-.adjustableButtonSet .geotabSwitchButton:focus + .geotabButton,
-.horizontalButtonSet .geotabSwitchButton:focus + .geotabButton,
+.adjustableButtonSet .geotabSwitchButton:focus+.geotabButton,
+.horizontalButtonSet .geotabSwitchButton:focus+.geotabButton,
 .verticalButtonSet .geo-button.active,
 .verticalButtonSet .geo-button:active,
 .verticalButtonSet .geo-button:focus,
@@ -2372,24 +2372,24 @@
     width: 100%
 }
 
-.adjustableButtonSet .geotabSwitchButton:first-child + .geotabButton,
-.horizontalButtonSet .geotabSwitchButton:first-child + .geotabButton {
+.adjustableButtonSet .geotabSwitchButton:first-child+.geotabButton,
+.horizontalButtonSet .geotabSwitchButton:first-child+.geotabButton {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px
 }
 
-.adjustableButtonSet .geotabSwitchButton:last-of-type + .geotabButton:last-of-type,
-.horizontalButtonSet .geotabSwitchButton:last-of-type + .geotabButton:last-of-type {
+.adjustableButtonSet .geotabSwitchButton:last-of-type+.geotabButton:last-of-type,
+.horizontalButtonSet .geotabSwitchButton:last-of-type+.geotabButton:last-of-type {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     margin-right: 0
 }
 
-.verticalButtonSet .geotabSwitchButton:focus + .geo-button {
+.verticalButtonSet .geotabSwitchButton:focus+.geo-button {
     z-index: 3
 }
 
-.verticalButtonSet .geotabSwitchButton:first-child + .geotabButton {
+.verticalButtonSet .geotabSwitchButton:first-child+.geotabButton {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px
 }
@@ -2414,19 +2414,19 @@
         flex-wrap: wrap
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .adjustableButtonSet {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.adjustableButtonSet {
         flex: 1 1 100%;
         width: 100%
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:not(.geotabButton-empty),
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton:not(.geotabButton-empty) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:not(.geotabButton-empty),
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton:not(.geotabButton-empty) {
         flex: 1 1 auto;
         width: 100%
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton {
         align-content: stretch;
         display: block;
         margin: 0;
@@ -2436,22 +2436,22 @@
         border-radius: 0
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:first-of-type,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton:first-child + .geotabButton {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:first-of-type,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton:first-child+.geotabButton {
         border-top-left-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:nth-of-type(1),
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton:nth-of-type(1) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:nth-of-type(1),
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton:nth-of-type(1) {
         border-top-right-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:nth-of-type(n+1):nth-last-of-type(-n+1) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:nth-of-type(n+1):nth-last-of-type(-n+1) {
         border-bottom-left-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:last-of-type,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton:last-of-type + .geotabButton:last-child {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:last-of-type,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton:last-of-type+.geotabButton:last-child {
         border-bottom-right-radius: 3px
     }
 }
@@ -2463,19 +2463,19 @@
         flex-wrap: wrap
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .adjustableButtonSet {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.adjustableButtonSet {
         flex: 1 1 50%;
         width: 50%
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:not(.geotabButton-empty),
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton:not(.geotabButton-empty) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:not(.geotabButton-empty),
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton:not(.geotabButton-empty) {
         flex: 1 1 auto;
         width: 50%
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton {
         align-content: stretch;
         display: block;
         margin: 0;
@@ -2485,22 +2485,22 @@
         border-radius: 0
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:first-of-type,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton:first-child + .geotabButton {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:first-of-type,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton:first-child+.geotabButton {
         border-top-left-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:nth-of-type(2),
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton:nth-of-type(2) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:nth-of-type(2),
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton:nth-of-type(2) {
         border-top-right-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:nth-of-type(2n+1):nth-last-of-type(-n+2) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:nth-of-type(2n+1):nth-last-of-type(-n+2) {
         border-bottom-left-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:last-of-type,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton:last-of-type + .geotabButton:last-child {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:last-of-type,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton:last-of-type+.geotabButton:last-child {
         border-bottom-right-radius: 3px
     }
 }
@@ -2514,19 +2514,19 @@
         flex-wrap: wrap
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .adjustableButtonSet {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.adjustableButtonSet {
         flex: 1 1 33.33333333%;
         width: 33.33333333%
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:not(.geotabButton-empty),
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton:not(.geotabButton-empty) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:not(.geotabButton-empty),
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton:not(.geotabButton-empty) {
         flex: 1 1 auto;
         width: 33.33333333%
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton {
         align-content: stretch;
         display: block;
         margin: 0;
@@ -2536,38 +2536,38 @@
         border-radius: 0
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:first-of-type,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton:first-child + .geotabButton {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:first-of-type,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton:first-child+.geotabButton {
         border-top-left-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:nth-of-type(3),
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton + .geotabButton:nth-of-type(3) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:nth-of-type(3),
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton+.geotabButton:nth-of-type(3) {
         border-top-right-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:nth-of-type(3n+1):nth-last-of-type(-n+3) {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:nth-of-type(3n+1):nth-last-of-type(-n+3) {
         border-bottom-left-radius: 3px
     }
 
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabButton:last-of-type,
-    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet > .geotabSwitchButton:last-of-type + .geotabButton:last-child {
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabButton:last-of-type,
+    .adjustableButtonSet.adjustableButtonSet.adjustableButtonSet>.geotabSwitchButton:last-of-type+.geotabButton:last-child {
         border-bottom-right-radius: 3px
     }
 
-    .adjustableButtonSet.set-2x > .adjustableButtonSet {
+    .adjustableButtonSet.set-2x>.adjustableButtonSet {
         flex: 1 1 50%;
         width: 50%
     }
 
-    .adjustableButtonSet.set-2x > .geotabButton:not(.geotabButton-empty),
-    .adjustableButtonSet.set-2x > .geotabSwitchButton + .geotabButton:not(.geotabButton-empty) {
+    .adjustableButtonSet.set-2x>.geotabButton:not(.geotabButton-empty),
+    .adjustableButtonSet.set-2x>.geotabSwitchButton+.geotabButton:not(.geotabButton-empty) {
         flex: 1 1 auto;
         width: 50%
     }
 
-    .adjustableButtonSet.set-2x > .geotabButton,
-    .adjustableButtonSet.set-2x > .geotabSwitchButton + .geotabButton {
+    .adjustableButtonSet.set-2x>.geotabButton,
+    .adjustableButtonSet.set-2x>.geotabSwitchButton+.geotabButton {
         align-content: stretch;
         display: block;
         margin: 0;
@@ -2577,22 +2577,22 @@
         border-radius: 0
     }
 
-    .adjustableButtonSet.set-2x > .geotabButton:first-of-type,
-    .adjustableButtonSet.set-2x > .geotabSwitchButton:first-child + .geotabButton {
+    .adjustableButtonSet.set-2x>.geotabButton:first-of-type,
+    .adjustableButtonSet.set-2x>.geotabSwitchButton:first-child+.geotabButton {
         border-top-left-radius: 3px
     }
 
-    .adjustableButtonSet.set-2x > .geotabButton:nth-of-type(2),
-    .adjustableButtonSet.set-2x > .geotabSwitchButton + .geotabButton:nth-of-type(2) {
+    .adjustableButtonSet.set-2x>.geotabButton:nth-of-type(2),
+    .adjustableButtonSet.set-2x>.geotabSwitchButton+.geotabButton:nth-of-type(2) {
         border-top-right-radius: 3px
     }
 
-    .adjustableButtonSet.set-2x > .geotabButton:nth-of-type(2n+1):nth-last-of-type(-n+2) {
+    .adjustableButtonSet.set-2x>.geotabButton:nth-of-type(2n+1):nth-last-of-type(-n+2) {
         border-bottom-left-radius: 3px
     }
 
-    .adjustableButtonSet.set-2x > .geotabButton:last-of-type,
-    .adjustableButtonSet.set-2x > .geotabSwitchButton:last-of-type + .geotabButton:last-child {
+    .adjustableButtonSet.set-2x>.geotabButton:last-of-type,
+    .adjustableButtonSet.set-2x>.geotabSwitchButton:last-of-type+.geotabButton:last-child {
         border-bottom-right-radius: 3px
     }
 }
@@ -2702,7 +2702,7 @@
     left: -9999px
 }
 
-.geo-switcher__input:disabled + .geo-switcher__label {
+.geo-switcher__input:disabled+.geo-switcher__label {
     cursor: default;
     color: #c0ccd8;
     fill: #c0ccd8;
@@ -2710,8 +2710,8 @@
     background-color: #fff
 }
 
-.geo-switcher__input:disabled:checked + .geo-switcher__label,
-.geo-switcher__input:disabled:checked + .geo-switcher__label:hover {
+.geo-switcher__input:disabled:checked+.geo-switcher__label,
+.geo-switcher__input:disabled:checked+.geo-switcher__label:hover {
     color: #fff;
     fill: #fff;
     border-color: #e3eaf2;
@@ -2772,18 +2772,18 @@
     display: none
 }
 
-.geo-switcher__input:checked + .geo-switcher__label {
+.geo-switcher__input:checked+.geo-switcher__label {
     background-color: #0078d3;
     color: #fff;
     fill: #fff
 }
 
-.geo-switcher__input:checked + .geo-switcher__label:hover,
-.geo-switcher__input:checked:focus + .geo-switcher__label {
+.geo-switcher__input:checked+.geo-switcher__label:hover,
+.geo-switcher__input:checked:focus+.geo-switcher__label {
     background-color: #005aa8
 }
 
-.geo-switcher__input:checked:active + .geo-switcher__label {
+.geo-switcher__input:checked:active+.geo-switcher__label {
     background-color: #004080
 }
 
@@ -2944,7 +2944,7 @@
     left: -9999px
 }
 
-.geo-select-switcher:checked + .geo-select-button {
+.geo-select-switcher:checked+.geo-select-button {
     background-color: #0078d3;
     color: #fff;
     fill: #fff
@@ -2996,35 +2996,35 @@
     border-color: #748faa
 }
 
-.geo-button-set__radio:focus + .geo-button-set__label,
-.geo-button-set__radio:hover + .geo-button-set__label {
+.geo-button-set__radio:focus+.geo-button-set__label,
+.geo-button-set__radio:hover+.geo-button-set__label {
     background: #eff2f7
 }
 
-.geo-button-set__radio:active + .geo-button-set__label {
+.geo-button-set__radio:active+.geo-button-set__label {
     background: #fff
 }
 
-.geo-button-set__radio:checked + .geo-button-set__label {
+.geo-button-set__radio:checked+.geo-button-set__label {
     background-color: #0078d3;
     color: #fff;
     fill: #fff
 }
 
-.geo-button-set__radio:checked:focus + .geo-button-set__label,
-.geo-button-set__radio:checked:hover + .geo-button-set__label {
+.geo-button-set__radio:checked:focus+.geo-button-set__label,
+.geo-button-set__radio:checked:hover+.geo-button-set__label {
     background-color: #005aa8;
     color: #fff;
     fill: #fff
 }
 
-.geo-button-set__radio:checked:active + .geo-button-set__label {
+.geo-button-set__radio:checked:active+.geo-button-set__label {
     background-color: #004080;
     color: #fff;
     fill: #fff
 }
 
-.geo-button-set__radio:disabled + .geo-button-set__label {
+.geo-button-set__radio:disabled+.geo-button-set__label {
     pointer-events: none;
     background-color: #fff;
     color: #c0ccd8
@@ -3072,9 +3072,9 @@
     cursor: default
 }
 
-.geo-button-checkbox__input:active + .geo-button-checkbox__label,
-.geo-button-checkbox__input:focus + .geo-button-checkbox__label,
-.geo-button-checkbox__input:hover + .geo-button-checkbox__label,
+.geo-button-checkbox__input:active+.geo-button-checkbox__label,
+.geo-button-checkbox__input:focus+.geo-button-checkbox__label,
+.geo-button-checkbox__input:hover+.geo-button-checkbox__label,
 .geo-button-checkbox__label:active,
 .geo-button-checkbox__label:focus,
 .geo-button-checkbox__label:hover {
@@ -3088,33 +3088,33 @@
     width: 100%
 }
 
-.geo-button-checkbox__input:disabled + .geo-button-checkbox__label {
+.geo-button-checkbox__input:disabled+.geo-button-checkbox__label {
     color: #c0ccd8;
     fill: #c0ccd8;
     border-color: #c0ccd8;
     background-color: #fff
 }
 
-.geo-button-checkbox__input:checked + .geo-button-checkbox__label {
+.geo-button-checkbox__input:checked+.geo-button-checkbox__label {
     color: #fff;
     fill: #fff;
     border-color: #0078d3;
     background-color: #0078d3
 }
 
-.geo-button-checkbox__input:checked + .geo-button-checkbox__label:active,
-.geo-button-checkbox__input:checked + .geo-button-checkbox__label:focus,
-.geo-button-checkbox__input:checked + .geo-button-checkbox__label:hover,
-.geo-button-checkbox__input:checked:active + .geo-button-checkbox__label,
-.geo-button-checkbox__input:checked:focus + .geo-button-checkbox__label,
-.geo-button-checkbox__input:checked:hover + .geo-button-checkbox__label {
+.geo-button-checkbox__input:checked+.geo-button-checkbox__label:active,
+.geo-button-checkbox__input:checked+.geo-button-checkbox__label:focus,
+.geo-button-checkbox__input:checked+.geo-button-checkbox__label:hover,
+.geo-button-checkbox__input:checked:active+.geo-button-checkbox__label,
+.geo-button-checkbox__input:checked:focus+.geo-button-checkbox__label,
+.geo-button-checkbox__input:checked:hover+.geo-button-checkbox__label {
     color: #fff;
     fill: #fff;
     border-color: #005aa8;
     background-color: #005aa8
 }
 
-.geo-button-checkbox__input:checked:disabled + .geo-button-checkbox__label {
+.geo-button-checkbox__input:checked:disabled+.geo-button-checkbox__label {
     color: #fff;
     fill: #fff;
     border-color: #e3eaf2;
@@ -3236,21 +3236,21 @@
     display: flex
 }
 
-.geo-label-only-input__input:checked + .geo-label-only-input__label {
+.geo-label-only-input__input:checked+.geo-label-only-input__label {
     background-color: #0078d3;
     color: #fff
 }
 
-.geo-label-only-input__input:active + .geo-label-only-input__label {
+.geo-label-only-input__input:active+.geo-label-only-input__label {
     background-color: #0078d3;
     color: #fff
 }
 
-.geo-label-only-input__input:focus + .geo-label-only-input__label {
+.geo-label-only-input__input:focus+.geo-label-only-input__label {
     background-color: #eff2f7
 }
 
-.geo-label-only-input__input:focus:checked + .geo-label-only-input__label {
+.geo-label-only-input__input:focus:checked+.geo-label-only-input__label {
     background-color: #005aa8
 }
 
@@ -3567,24 +3567,24 @@
 }
 
 .checkmateFormPage fieldset .partLegend,
-.checkmateFormPage fieldset > legend,
+.checkmateFormPage fieldset>legend,
 .geotabFieldset .partLegend,
-.geotabFieldset > legend {
+.geotabFieldset>legend {
     font-weight: 700;
     color: #25477b;
     fill: #25477b;
     text-transform: uppercase
 }
 
-.checkmateFormPage fieldset fieldset > legend,
-.geotabFieldset fieldset > legend {
+.checkmateFormPage fieldset fieldset>legend,
+.geotabFieldset fieldset>legend {
     padding: .5em 2%;
     color: #222;
     text-transform: none
 }
 
-.checkmateFormPage fieldset fieldset > .checkmateField,
-.geotabFieldset fieldset > .checkmateField {
+.checkmateFormPage fieldset fieldset>.checkmateField,
+.geotabFieldset fieldset>.checkmateField {
     margin: 2px 0;
     padding-top: .2em;
     padding-bottom: .2em
@@ -3672,8 +3672,8 @@
     margin: 0
 }
 
-.checkmateField > :first-child:not(.fieldWithoutLabel),
-.geotabField > :first-child:not(.fieldWithoutLabel) {
+.checkmateField> :first-child:not(.fieldWithoutLabel),
+.geotabField> :first-child:not(.fieldWithoutLabel) {
     display: inline-block;
     max-width: 27%;
     margin-bottom: 2px;
@@ -3687,17 +3687,17 @@
     hyphens: auto
 }
 
-.checkmateField:not(.notEditable) > :first-child:not(.fieldWithoutLabel),
-.geotabField:not(.notEditable) > :first-child:not(.fieldWithoutLabel) {
+.checkmateField:not(.notEditable)> :first-child:not(.fieldWithoutLabel),
+.geotabField:not(.notEditable)> :first-child:not(.fieldWithoutLabel) {
     margin-top: 3px
 }
 
-.checkmateField > .elementWithoutLabel,
-.checkmateField > .fieldWithoutLabel:not(.singleField),
-.checkmateField > :first-child + *,
-.geotabField > .elementWithoutLabel,
-.geotabField > .fieldWithoutLabel:not(.singleField),
-.geotabField > :first-child + * {
+.checkmateField>.elementWithoutLabel,
+.checkmateField>.fieldWithoutLabel:not(.singleField),
+.checkmateField> :first-child+*,
+.geotabField>.elementWithoutLabel,
+.geotabField>.fieldWithoutLabel:not(.singleField),
+.geotabField> :first-child+* {
     float: right;
     width: 69%
 }
@@ -3711,22 +3711,22 @@
 
 @media only screen and (max-width:480px) {
 
-    .checkmateField > :first-child + *,
-    .geotabField > :first-child + * {
+    .checkmateField> :first-child+*,
+    .geotabField> :first-child+* {
         width: 56%
     }
 
     .checkmateField .fullWidth,
-    .checkmateField .fullWidth > :first-child,
-    .checkmateField.fullWidth > :first-child,
+    .checkmateField .fullWidth> :first-child,
+    .checkmateField.fullWidth> :first-child,
     .geotabField .fullWidth,
-    .geotabField .fullWidth > :first-child,
-    .geotabField.fullWidth > :first-child {
+    .geotabField .fullWidth> :first-child,
+    .geotabField.fullWidth> :first-child {
         width: 100%
     }
 
-    .checkmateField.notEditable > :first-child + *,
-    .geotabField.notEditable > :first-child + * {
+    .checkmateField.notEditable> :first-child+*,
+    .geotabField.notEditable> :first-child+* {
         width: auto;
         padding-left: 5px
     }
@@ -3738,8 +3738,8 @@
         align-items: center
     }
 
-    .checkmateField:not(.notFlexible) > :first-child,
-    .geotabField:not(.notFlexible) > :first-child {
+    .checkmateField:not(.notFlexible)> :first-child,
+    .geotabField:not(.notFlexible)> :first-child {
         min-width: 44%;
         max-width: none;
         width: auto;
@@ -3770,8 +3770,8 @@
         width: 56%
     }
 
-    .checkmateField:not(.notFlexible) .flexible .checkmateFormEditField + *,
-    .geotabField:not(.notFlexible) .flexible .checkmateFormEditField + * {
+    .checkmateField:not(.notFlexible) .flexible .checkmateFormEditField+*,
+    .geotabField:not(.notFlexible) .flexible .checkmateFormEditField+* {
         padding: .3em
     }
 
@@ -3780,18 +3780,18 @@
         width: 100%
     }
 
-    .checkmateField:not(.notFlexible) > textarea.checkmateFormEditField,
-    .geotabField:not(.notFlexible) > textarea.checkmateFormEditField {
+    .checkmateField:not(.notFlexible)>textarea.checkmateFormEditField,
+    .geotabField:not(.notFlexible)>textarea.checkmateFormEditField {
         flex: initial
     }
 
-    .checkmateField.notFlexible > :first-child,
-    .geotabField.notFlexible > :first-child {
+    .checkmateField.notFlexible> :first-child,
+    .geotabField.notFlexible> :first-child {
         max-width: none
     }
 
-    .checkmateField.notFlexible > :first-child + :not(.noWidth),
-    .geotabField.notFlexible > :first-child + :not(.noWidth) {
+    .checkmateField.notFlexible> :first-child+ :not(.noWidth),
+    .geotabField.notFlexible> :first-child+ :not(.noWidth) {
         width: 100%
     }
 
@@ -3876,11 +3876,11 @@
     position: relative
 }
 
-#options_viewOrganizer_content > #options_MultiEdit_EnableMapViews_container {
+#options_viewOrganizer_content>#options_MultiEdit_EnableMapViews_container {
     overflow: hidden
 }
 
-#options_viewOrganizer_content > #options_MultiEdit_EnableMapViews_container > .geo-switcher {
+#options_viewOrganizer_content>#options_MultiEdit_EnableMapViews_container>.geo-switcher {
     margin-bottom: 5px;
     width: 100%
 }
@@ -3969,8 +3969,8 @@
     fill: #fff
 }
 
-.filterCloseButton:focus > .svgIcon,
-.filterCloseButton:hover > .svgIcon {
+.filterCloseButton:focus>.svgIcon,
+.filterCloseButton:hover>.svgIcon {
     fill: var(--state-contrast-color, #ffffff)
 }
 
@@ -4937,15 +4937,15 @@
     margin: 9px 0 0
 }
 
-.checkmateField:not(.singleLabel) > :first-child:not(.fieldWithoutLabel),
-.geotabField:not(.singleLabel) > :first-child:not(.fieldWithoutLabel) {
+.checkmateField:not(.singleLabel)> :first-child:not(.fieldWithoutLabel),
+.geotabField:not(.singleLabel)> :first-child:not(.fieldWithoutLabel) {
     width: 27%;
     text-align: left;
     color: #4e677e
 }
 
-.checkmateField:not(.notEditable) > :first-child:not(.fieldWithoutLabel),
-.geotabField:not(.notEditable) > :first-child:not(.fieldWithoutLabel) {
+.checkmateField:not(.notEditable)> :first-child:not(.fieldWithoutLabel),
+.geotabField:not(.notEditable)> :first-child:not(.fieldWithoutLabel) {
     color: #4e677e;
     text-align: left
 }
@@ -4982,8 +4982,8 @@
         flex-direction: column
     }
 
-    .checkmateField:not(.singleLabel) > :first-child:not(.fieldWithoutLabel),
-    .geotabField:not(.singleLabel) > :first-child:not(.fieldWithoutLabel) {
+    .checkmateField:not(.singleLabel)> :first-child:not(.fieldWithoutLabel),
+    .geotabField:not(.singleLabel)> :first-child:not(.fieldWithoutLabel) {
         width: auto;
         text-align: left
     }
@@ -5498,7 +5498,7 @@
     cursor: pointer
 }
 
-.geo-icon > use,
+.geo-icon>use,
 .zenith-button--no-events .zenith-button-caption,
 .zenith-button--no-events .zenith-icon {
     pointer-events: none
@@ -5789,7 +5789,7 @@
     flex: 1 1 auto
 }
 
-.zenith-form-section + .zenith-form-section {
+.zenith-form-section+.zenith-form-section {
     padding-top: 0
 }
 
@@ -5875,7 +5875,7 @@
     margin-bottom: 0
 }
 
-.zenith-form__field__description + .zenith-form__field__description {
+.zenith-form__field__description+.zenith-form__field__description {
     margin-top: 0
 }
 
@@ -6313,10 +6313,10 @@
     margin-top: .5rem
 }
 
-.zenith-input-assistive-text + .zenith-input-assistive-text,
-.zenith-input-assistive-text + .zenith-input-error-mesage,
-.zenith-input-error-mesage + .zenith-input-assistive-text,
-.zenith-input-error-mesage + .zenith-input-error-mesage {
+.zenith-input-assistive-text+.zenith-input-assistive-text,
+.zenith-input-assistive-text+.zenith-input-error-mesage,
+.zenith-input-error-mesage+.zenith-input-assistive-text,
+.zenith-input-error-mesage+.zenith-input-error-mesage {
     margin-top: 0
 }
 
@@ -7024,7 +7024,7 @@
     width: auto
 }
 
-.popupWindow fieldset > legend {
+.popupWindow fieldset>legend {
     font-weight: 400;
     padding: 3px 0;
     color: #25477b;
@@ -7057,7 +7057,7 @@
 
 .popupWindow:not(.optionsPopupMenu) li:not(:first-child):not(.mainMenuOption),
 .popupWindow:not(.optionsPopupMenu) li:not(:first-child):not(.primaries-menu__option),
-.popupWindow:not(.optionsPopupMenu) > :not(ul) {
+.popupWindow:not(.optionsPopupMenu)> :not(ul) {
     padding-top: 4px
 }
 
@@ -7359,7 +7359,7 @@
 }
 
 .geo-options-menu .geo-options-menu__toggle-buttons:has(+.geo-options-menu__period-picker-hidden),
-.route-completion-page .legend-list__item:has(use[*|href="#geo-rectangle"]) ~ .legend-list__item::before {
+.route-completion-page .legend-list__item:has(use[*|href="#geo-rectangle"])~.legend-list__item::before {
     display: none
 }
 
@@ -8231,12 +8231,12 @@
         flex-wrap: wrap
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set {
         flex: 1 1 100%;
         width: 100%
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item {
         flex: 1 1 auto;
         width: 100%;
         align-content: stretch;
@@ -8248,19 +8248,19 @@
         border-radius: 0
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:first-of-type {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:first-of-type {
         border-top-left-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:nth-of-type(1) {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:nth-of-type(1) {
         border-top-right-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:nth-of-type(n+1):nth-last-of-type(-n+1) {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:nth-of-type(n+1):nth-last-of-type(-n+1) {
         border-bottom-left-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:last-of-type {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:last-of-type {
         border-bottom-right-radius: 3px
     }
 }
@@ -8272,12 +8272,12 @@
         flex-wrap: wrap
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set {
         flex: 1 1 50%;
         width: 50%
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item {
         flex: 1 1 auto;
         width: 50%;
         align-content: stretch;
@@ -8289,19 +8289,19 @@
         border-radius: 0
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:first-of-type {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:first-of-type {
         border-top-left-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:nth-of-type(2) {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:nth-of-type(2) {
         border-top-right-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:nth-of-type(2n+1):nth-last-of-type(-n+2) {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:nth-of-type(2n+1):nth-last-of-type(-n+2) {
         border-bottom-left-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:last-of-type {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:last-of-type {
         border-bottom-right-radius: 3px
     }
 }
@@ -8315,12 +8315,12 @@
         flex-wrap: wrap
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set {
         flex: 1 1 33.33333333%;
         width: 33.33333333%
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item {
         flex: 1 1 auto;
         width: 33.33333333%;
         align-content: stretch;
@@ -8332,31 +8332,31 @@
         border-radius: 0
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:first-of-type,
-    .adjustable-set.set-2x > .adjustable-set__item:first-of-type {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:first-of-type,
+    .adjustable-set.set-2x>.adjustable-set__item:first-of-type {
         border-top-left-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:nth-of-type(3),
-    .adjustable-set.set-2x > .adjustable-set__item:nth-of-type(2) {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:nth-of-type(3),
+    .adjustable-set.set-2x>.adjustable-set__item:nth-of-type(2) {
         border-top-right-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:nth-of-type(3n+1):nth-last-of-type(-n+3) {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:nth-of-type(3n+1):nth-last-of-type(-n+3) {
         border-bottom-left-radius: 3px
     }
 
-    .adjustable-set.adjustable-set.adjustable-set > .adjustable-set__item:last-of-type,
-    .adjustable-set.set-2x > .adjustable-set__item:last-of-type {
+    .adjustable-set.adjustable-set.adjustable-set>.adjustable-set__item:last-of-type,
+    .adjustable-set.set-2x>.adjustable-set__item:last-of-type {
         border-bottom-right-radius: 3px
     }
 
-    .adjustable-set.set-2x > .adjustable-set {
+    .adjustable-set.set-2x>.adjustable-set {
         flex: 1 1 50%;
         width: 50%
     }
 
-    .adjustable-set.set-2x > .adjustable-set__item {
+    .adjustable-set.set-2x>.adjustable-set__item {
         flex: 1 1 auto;
         width: 50%;
         align-content: stretch;
@@ -8368,7 +8368,7 @@
         border-radius: 0
     }
 
-    .adjustable-set.set-2x > .adjustable-set__item:nth-of-type(2n+1):nth-last-of-type(-n+2) {
+    .adjustable-set.set-2x>.adjustable-set__item:nth-of-type(2n+1):nth-last-of-type(-n+2) {
         border-bottom-left-radius: 3px
     }
 }
@@ -8525,58 +8525,58 @@
     display: inline
 }
 
-.geo-checkbox__input:checked + .geo-checkbox__label > .geo-checkbox__box {
+.geo-checkbox__input:checked+.geo-checkbox__label>.geo-checkbox__box {
     border-color: #0078d3;
     background-color: #0078d3
 }
 
-.dvir-parent-list li.defect-parent-item > input[type=checkbox]:checked + .parent-heading .collapseIcon,
-.dvir-parent-list li.defect-parent-item > input[type=checkbox]:checked + .parent-heading + div.hidden-div,
-.geo-checkbox__input:checked + .geo-checkbox__label > .geo-checkbox__box .geo-checkbox__icon,
-.geo-checkbox__input:checked + .geo-checkbox__label > .geo-checkbox__radio .geo-checkbox__radio-dot {
+.dvir-parent-list li.defect-parent-item>input[type=checkbox]:checked+.parent-heading .collapseIcon,
+.dvir-parent-list li.defect-parent-item>input[type=checkbox]:checked+.parent-heading+div.hidden-div,
+.geo-checkbox__input:checked+.geo-checkbox__label>.geo-checkbox__box .geo-checkbox__icon,
+.geo-checkbox__input:checked+.geo-checkbox__label>.geo-checkbox__radio .geo-checkbox__radio-dot {
     display: block
 }
 
-.geo-checkbox__input:checked + .geo-checkbox__label > .geo-checkbox__radio {
+.geo-checkbox__input:checked+.geo-checkbox__label>.geo-checkbox__radio {
     border-color: #0078d3
 }
 
-.geo-checkbox__input:checked + .geo-checkbox__label .geo-checkbox__icon {
+.geo-checkbox__input:checked+.geo-checkbox__label .geo-checkbox__icon {
     fill: #fff;
     color: #fff
 }
 
-.geo-checkbox__input:focus + .geo-checkbox__label,
-.geo-checkbox__input:focus + .geo-checkbox__label > .geo-checkbox__box {
+.geo-checkbox__input:focus+.geo-checkbox__label,
+.geo-checkbox__input:focus+.geo-checkbox__label>.geo-checkbox__box {
     outline: dotted 1px var(--geo-checkbox-outline, #0078d3);
     outline-offset: 1px
 }
 
 @supports selector(:focus-visible) {
 
-    .geo-checkbox__input:focus + .geo-checkbox__label,
-    .geo-checkbox__input:focus + .geo-checkbox__label > .geo-checkbox__box {
+    .geo-checkbox__input:focus+.geo-checkbox__label,
+    .geo-checkbox__input:focus+.geo-checkbox__label>.geo-checkbox__box {
         outline: 0
     }
 
-    .geo-checkbox__input:focus-visible + .geo-checkbox__label,
-    .geo-checkbox__input:focus-visible + .geo-checkbox__label > .geo-checkbox__box {
+    .geo-checkbox__input:focus-visible+.geo-checkbox__label,
+    .geo-checkbox__input:focus-visible+.geo-checkbox__label>.geo-checkbox__box {
         outline: dotted 1px var(--geo-checkbox-outline, #0078d3);
         outline-offset: 1px
     }
 }
 
-.geo-checkbox__input:disabled + .geo-checkbox__label > .geo-checkbox__box,
-.geo-checkbox__input:disabled + .geo-checkbox__label > .geo-checkbox__radio {
+.geo-checkbox__input:disabled+.geo-checkbox__label>.geo-checkbox__box,
+.geo-checkbox__input:disabled+.geo-checkbox__label>.geo-checkbox__radio {
     border-color: #c0ccd8
 }
 
-.geo-checkbox__input:disabled:checked + .geo-checkbox__label > .geo-checkbox__box {
+.geo-checkbox__input:disabled:checked+.geo-checkbox__label>.geo-checkbox__box {
     border-color: #c0ccd8;
     background-color: #c0ccd8
 }
 
-.geo-checkbox__input:disabled + .geo-checkbox__label .geo-checkbox__radio-dot {
+.geo-checkbox__input:disabled+.geo-checkbox__label .geo-checkbox__radio-dot {
     background-color: #c0ccd8
 }
 
@@ -9470,7 +9470,7 @@
     padding-top: 0
 }
 
-.mainMenuOption:last-child > .mainMenuLink {
+.mainMenuOption:last-child>.mainMenuLink {
     border: 0
 }
 
@@ -10376,7 +10376,7 @@
     background-color: initial
 }
 
-.menu-list--narrowed .menu-list__header--expanded > .menu-list__header-sub-menu {
+.menu-list--narrowed .menu-list__header--expanded>.menu-list__header-sub-menu {
     display: none
 }
 
@@ -10438,7 +10438,7 @@
     border-radius: 4px
 }
 
-.menu-list__header--expanded > .menu-list__header-sub-menu {
+.menu-list__header--expanded>.menu-list__header-sub-menu {
     display: block
 }
 
@@ -10495,7 +10495,7 @@
     border-left: 1px solid #c0ccd8
 }
 
-.menu-list > .menu-list__options-list {
+.menu-list>.menu-list__options-list {
     background-color: #f9fafb
 }
 
@@ -10506,8 +10506,8 @@
     padding-top: 0
 }
 
-.menu-list.geo-popup .menu-list__header:last-child > .mainMenuLink,
-.menu-list__option:last-child > .mainMenuLink {
+.menu-list.geo-popup .menu-list__header:last-child>.mainMenuLink,
+.menu-list__option:last-child>.mainMenuLink {
     border: 0
 }
 
@@ -11045,7 +11045,7 @@
 }
 
 .search-result-accordion--expanded .search-result-accordion__content,
-.search-result-item--expanded > .search-result-item__content {
+.search-result-item--expanded>.search-result-item__content {
     display: block
 }
 
@@ -11124,12 +11124,12 @@
     align-items: stretch
 }
 
-.search-result-item:last-child > .search-result-item__link:first-child,
-.search-result-item:last-child > .search-result-item__wrapper:first-child {
+.search-result-item:last-child>.search-result-item__link:first-child,
+.search-result-item:last-child>.search-result-item__wrapper:first-child {
     padding-bottom: 0
 }
 
-.search-result-item:last-child > .search-result-item__content {
+.search-result-item:last-child>.search-result-item__content {
     padding-bottom: 0
 }
 
@@ -11330,7 +11330,7 @@
     font-weight: 500
 }
 
-.search-result-item--expanded > .search-result-item__wrapper > .search-result-item__button .search-result-item__icon {
+.search-result-item--expanded>.search-result-item__wrapper>.search-result-item__button .search-result-item__icon {
     transform: rotate(0deg)
 }
 
@@ -11890,7 +11890,7 @@
     border: 10px solid transparent
 }
 
-.passwordCheckList ul > li > span:not(.geotabButtonIcons) {
+.passwordCheckList ul>li>span:not(.geotabButtonIcons) {
     margin-left: -10px
 }
 
@@ -11909,7 +11909,7 @@
     left: -20px
 }
 
-.passwordCheckList > span {
+.passwordCheckList>span {
     margin-left: 20px;
     font-weight: 700
 }
@@ -12084,7 +12084,7 @@
     margin: 0
 }
 
-.transparency-slider > .transparency-slider__control {
+.transparency-slider>.transparency-slider__control {
     width: 100px;
     float: right;
     margin-right: 15px
@@ -12355,8 +12355,8 @@
     display: none
 }
 
-.plan-badge.badge_plus > .plan-badge__plus,
-.plan-badge.badge_pro > .plan-badge__pro,
+.plan-badge.badge_plus>.plan-badge__plus,
+.plan-badge.badge_pro>.plan-badge__pro,
 .shield--shown {
     display: block
 }
@@ -16005,7 +16005,7 @@
     left: -9999px
 }
 
-.geo-switch-button__input:focus + .geo-switch-button__label {
+.geo-switch-button__input:focus+.geo-switch-button__label {
     color: #1f2833;
     border-color: #748faa;
     background-color: #eff2f7;
@@ -16014,7 +16014,7 @@
     text-decoration: none
 }
 
-.geo-switch-button__input:checked + .geo-switch-button__label,
+.geo-switch-button__input:checked+.geo-switch-button__label,
 .geo-switch-button__label--checked {
     color: #fff;
     border-color: #748faa;
@@ -16023,8 +16023,8 @@
     outline: 0
 }
 
-.geo-switch-button__input:focus:checked + .geo-switch-button__label,
-.geo-switch-button__input:hover:checked + .geo-switch-button__label,
+.geo-switch-button__input:focus:checked+.geo-switch-button__label,
+.geo-switch-button__input:hover:checked+.geo-switch-button__label,
 .geo-switch-button__label--checked:focus,
 .geo-switch-button__label--checked:hover {
     color: #fff;
@@ -16034,8 +16034,8 @@
     outline: 0
 }
 
-.geo-switch-button__input:checked:disabled + .geo-switch-button__label,
-.geo-switch-button__input:disabled + .geo-switch-button__label,
+.geo-switch-button__input:checked:disabled+.geo-switch-button__label,
+.geo-switch-button__input:disabled+.geo-switch-button__label,
 .geo-switch-button__label:disabled .geo-switch-button__label--checked:disabled {
     background-color: #fff;
     color: #c0ccd8;
@@ -16049,7 +16049,7 @@
     color: #fff
 }
 
-.geo-switch-button--dark-theme .geo-switch-button__input:checked + .geo-switch-button__label,
+.geo-switch-button--dark-theme .geo-switch-button__input:checked+.geo-switch-button__label,
 .geo-switch-button--dark-theme .geo-switch-button__label--checked {
     color: #25477b;
     background-color: #fff
@@ -16357,24 +16357,24 @@
     border-block-start: none
 }
 
-.entities-list__row:hover > .entities-list__row-cell {
+.entities-list__row:hover>.entities-list__row-cell {
     background-color: #eff2f7
 }
 
-.entities-list__row:hover > .entities-list__row-cell--visible-on-hover {
+.entities-list__row:hover>.entities-list__row-cell--visible-on-hover {
     position: sticky;
     right: 0
 }
 
-.entities-list__row--selected > .entities-list__row-cell {
+.entities-list__row--selected>.entities-list__row-cell {
     background-color: #f9fafb
 }
 
-.entities-list__row--last > .entities-list__row-cell:first-child {
+.entities-list__row--last>.entities-list__row-cell:first-child {
     border-bottom-left-radius: 8px
 }
 
-.entities-list__row--last > .entities-list__row-cell:last-child {
+.entities-list__row--last>.entities-list__row-cell:last-child {
     border-bottom-right-radius: 8px
 }
 
@@ -17516,11 +17516,11 @@
     stroke: #4e677e
 }
 
-.groups-filter-menu__action-checkbox .geo-checkbox__input:checked + .geo-checkbox__label .geo-checkbox__box {
+.groups-filter-menu__action-checkbox .geo-checkbox__input:checked+.geo-checkbox__label .geo-checkbox__box {
     border-color: none
 }
 
-.groups-filter-menu__action-checkbox .geo-checkbox__input:checked + .geo-checkbox__label .geo-checkbox__box .geo-checkbox__icon {
+.groups-filter-menu__action-checkbox .geo-checkbox__input:checked+.geo-checkbox__label .geo-checkbox__box .geo-checkbox__icon {
     fill: #4e677e
 }
 
@@ -18396,29 +18396,29 @@
     width: 0
 }
 
-.feedback-reason__input[type=checkbox]:checked + .feedback-reason__label,
-.feedback-reason__input[type=radio]:checked + .feedback-reason__label {
+.feedback-reason__input[type=checkbox]:checked+.feedback-reason__label,
+.feedback-reason__input[type=radio]:checked+.feedback-reason__label {
     background-color: #0078d3;
     color: #fff
 }
 
-.feedback-reason__input[type=checkbox]:checked + .feedback-reason__label .feedback-reason__checked-icon,
-.feedback-reason__input[type=radio]:checked + .feedback-reason__label .feedback-reason__checked-icon {
+.feedback-reason__input[type=checkbox]:checked+.feedback-reason__label .feedback-reason__checked-icon,
+.feedback-reason__input[type=radio]:checked+.feedback-reason__label .feedback-reason__checked-icon {
     display: inline-flex
 }
 
-.feedback-reason__input[type=checkbox]:focus-visible + .feedback-reason__label,
-.feedback-reason__input[type=checkbox]:hover + .feedback-reason__label,
-.feedback-reason__input[type=radio]:focus-visible + .feedback-reason__label,
-.feedback-reason__input[type=radio]:hover + .feedback-reason__label {
+.feedback-reason__input[type=checkbox]:focus-visible+.feedback-reason__label,
+.feedback-reason__input[type=checkbox]:hover+.feedback-reason__label,
+.feedback-reason__input[type=radio]:focus-visible+.feedback-reason__label,
+.feedback-reason__input[type=radio]:hover+.feedback-reason__label {
     border-color: #0078d3;
     color: #1f2833
 }
 
-.feedback-reason__input[type=checkbox]:checked:focus-visible + .feedback-reason__label,
-.feedback-reason__input[type=checkbox]:checked:hover + .feedback-reason__label,
-.feedback-reason__input[type=radio]:checked:focus-visible + .feedback-reason__label,
-.feedback-reason__input[type=radio]:checked:hover + .feedback-reason__label {
+.feedback-reason__input[type=checkbox]:checked:focus-visible+.feedback-reason__label,
+.feedback-reason__input[type=checkbox]:checked:hover+.feedback-reason__label,
+.feedback-reason__input[type=radio]:checked:focus-visible+.feedback-reason__label,
+.feedback-reason__input[type=radio]:checked:hover+.feedback-reason__label {
     background-color: #005aa8;
     color: #fff
 }
@@ -19148,7 +19148,7 @@
     display: none
 }
 
-#hosLogs_id .dayHeader__mode_logs .graphViewContainer > .graphView.expanded + .graphLegend,
+#hosLogs_id .dayHeader__mode_logs .graphViewContainer>.graphView.expanded+.graphLegend,
 .assign-driver-form--no-driver .assign-driver-form__error {
     display: block
 }
@@ -19317,7 +19317,7 @@
     border-color: #b11810
 }
 
-#importZones_Id .mainZoneListItem .invalidZoneParameter > input,
+#importZones_Id .mainZoneListItem .invalidZoneParameter>input,
 .geo-select-box--full-width {
     width: 100%
 }
@@ -19488,15 +19488,15 @@
 .checkbox-item--focused .checkbox-item__label,
 .checkbox-item:focus .checkbox-item__label,
 .checkbox-item:hover .checkbox-item__label,
-.checkbox-item__action:focus + .checkbox-item__label,
-.checkbox-item__action:hover + .checkbox-item__label {
+.checkbox-item__action:focus+.checkbox-item__label,
+.checkbox-item__action:hover+.checkbox-item__label {
     background-color: #eff2f7;
     text-decoration: none;
     outline: 0
 }
 
 .checkbox-item:active .checkbox-item__label,
-.checkbox-item__action:active + .checkbox-item__label {
+.checkbox-item__action:active+.checkbox-item__label {
     background-color: #0078d3;
     color: #fff;
     text-decoration: none;
@@ -19505,7 +19505,7 @@
 }
 
 .checkbox-item--checked .checkbox-item__label,
-.checkbox-item__action:checked + .checkbox-item__label {
+.checkbox-item__action:checked+.checkbox-item__label {
     background-color: #0078d3;
     color: #fff;
     fill: #fff
@@ -19513,23 +19513,23 @@
 
 .checkbox-item--checked:focus .checkbox-item__label,
 .checkbox-item--checked:hover .checkbox-item__label,
-.checkbox-item__action:checked:focus + .checkbox-item__label,
-.checkbox-item__action:checked:hover + .checkbox-item__label {
+.checkbox-item__action:checked:focus+.checkbox-item__label,
+.checkbox-item__action:checked:hover+.checkbox-item__label {
     background-color: #005aa8;
     color: #fff;
     fill: #fff
 }
 
 .checkbox-item--checked:active .checkbox-item__label,
-.checkbox-item:active .checkbox-item__action:checked + .checkbox-item__label,
-.checkbox-item__action:checked:active + .checkbox-item__label {
+.checkbox-item:active .checkbox-item__action:checked+.checkbox-item__label,
+.checkbox-item__action:checked:active+.checkbox-item__label {
     background-color: #fff;
     color: #1f2833;
     fill: #66788c
 }
 
 .checkbox-item--disabled,
-.checkbox-item__action:disabled + .checkbox-item__label {
+.checkbox-item__action:disabled+.checkbox-item__label {
     pointer-events: none;
     background-color: #fff;
     color: #eff2f7
@@ -19856,7 +19856,7 @@
     box-shadow: none
 }
 
-#hosLogs_id_violation > .item__icon {
+#hosLogs_id_violation>.item__icon {
     background-color: #ff7f7f
 }
 
@@ -20373,20 +20373,20 @@
     border-radius: 4px
 }
 
-#hosLogs_id .daySummary .daySummary__item_type_shipmentInfo .item__icon > .svgIcon {
+#hosLogs_id .daySummary .daySummary__item_type_shipmentInfo .item__icon>.svgIcon {
     top: .1em;
     width: 1.3em;
     height: 1.3em
 }
 
-#hosLogs_id .checkmateListAnnotationIcon > .svgIcon {
+#hosLogs_id .checkmateListAnnotationIcon>.svgIcon {
     width: 1.3em;
     height: 1.3em;
     top: 3px
 }
 
-#hosLogs_id .graphContainer > .graphLegend,
-#hosLogs_id .graphViewContainer > .graphLegend {
+#hosLogs_id .graphContainer>.graphLegend,
+#hosLogs_id .graphViewContainer>.graphLegend {
     display: none
 }
 
@@ -20436,7 +20436,7 @@
     margin-right: 0
 }
 
-#hosLogs_id .expandableGraphLegend > .expandableGraphLegend__inner {
+#hosLogs_id .expandableGraphLegend>.expandableGraphLegend__inner {
     overflow: hidden;
     background: #e5f2fa;
     border-width: 0;
@@ -20452,7 +20452,7 @@
     padding: 0 0 8px
 }
 
-#hosLogs_id .expandableGraphLegend.sticky > .expandableGraphLegend__inner {
+#hosLogs_id .expandableGraphLegend.sticky>.expandableGraphLegend__inner {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     box-shadow: #000 0-3px 10px
@@ -20514,37 +20514,37 @@
     display: block
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_verified > .item__icon {
+#hosLogs_id .graphLegend .graphLegend__item__type_verified>.item__icon {
     background-color: #98cb98
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_unverified > .item__icon {
+#hosLogs_id .graphLegend .graphLegend__item__type_unverified>.item__icon {
     background-color: #989898
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_edited > .item__icon {
+#hosLogs_id .graphLegend .graphLegend__item__type_edited>.item__icon {
     background-color: #fefe98
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_exemption > .item__icon {
+#hosLogs_id .graphLegend .graphLegend__item__type_exemption>.item__icon {
     border: 0
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_exemption > .item__icon > .svgIcon {
+#hosLogs_id .graphLegend .graphLegend__item__type_exemption>.item__icon>.svgIcon {
     width: 1.4em;
     height: 1.4em;
     fill: #989898
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_exemption.ewd > .item__icon > .svgIcon {
+#hosLogs_id .graphLegend .graphLegend__item__type_exemption.ewd>.item__icon>.svgIcon {
     fill: #98cb98
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_violation > .item__icon {
+#hosLogs_id .graphLegend .graphLegend__item__type_violation>.item__icon {
     background-color: #ff7f7f
 }
 
-#hosLogs_id .graphLegend .graphLegend__item__type_break > .item__icon {
+#hosLogs_id .graphLegend .graphLegend__item__type_break>.item__icon {
     background-color: #7fc6ff
 }
 
@@ -20877,7 +20877,7 @@
     }
 
     #hosLogs_id #hosLogs_graphLegend,
-    #hosLogs_id .graphViewContainer > .graphLegend .graphLegend__item.graphLegend__item__type_violation,
+    #hosLogs_id .graphViewContainer>.graphLegend .graphLegend__item.graphLegend__item__type_violation,
     #hosLogs_id .grid-control {
         display: none
     }
@@ -20890,7 +20890,7 @@
         margin-top: 0
     }
 
-    #hosLogs_id .graphViewContainer > .graphLegend {
+    #hosLogs_id .graphViewContainer>.graphLegend {
         display: block
     }
 
@@ -21262,19 +21262,19 @@
     font-weight: 400
 }
 
-.hosAvailability .hos-avail__checkbox:focus:not(:checked) + .hos-avail__button {
+.hosAvailability .hos-avail__checkbox:focus:not(:checked)+.hos-avail__button {
     border-color: #246390
 }
 
-.hosAvailability .hos-avail__checkbox:focus:checked + .hos-avail__button,
-.hosAvailability .hos-avail__checkbox:hover:checked + .hos-avail__button {
+.hosAvailability .hos-avail__checkbox:focus:checked+.hos-avail__button,
+.hosAvailability .hos-avail__checkbox:hover:checked+.hos-avail__button {
     color: #fff;
     fill: #fff;
     border-color: #748faa;
     background-color: #2f3d4c
 }
 
-.hosAvailability .hos-avail__checkbox:checked + .hos-avail__button {
+.hosAvailability .hos-avail__checkbox:checked+.hos-avail__button {
     color: #fff;
     fill: #fff;
     border-color: #748faa;
@@ -21935,7 +21935,7 @@
         text-align: right
     }
 
-    #importZones_Id .mainZoneListItem .invalidZoneParameter > input {
+    #importZones_Id .mainZoneListItem .invalidZoneParameter>input {
         margin-top: -.3em
     }
 }
@@ -22630,11 +22630,11 @@
     pointer-events: none
 }
 
-.two-options-switcher__input:checked + .two-options-switcher__label {
+.two-options-switcher__input:checked+.two-options-switcher__label {
     font-weight: 500
 }
 
-.two-options-switcher__input:focus + .two-options-switcher__label {
+.two-options-switcher__input:focus+.two-options-switcher__label {
     outline: auto
 }
 
@@ -22895,8 +22895,8 @@
 
 .device-installation-buttons--hidden-actions .device-installation-buttons__item,
 .device-installation-toolbar-buttons,
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionHeader .svgIcon > .accordion-opened,
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionHeader.activeHeader .svgIcon > .accordion-closed {
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionHeader .svgIcon>.accordion-opened,
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionHeader.activeHeader .svgIcon>.accordion-closed {
     display: none
 }
 
@@ -22996,26 +22996,26 @@
     border-bottom-right-radius: 0
 }
 
-.geotabAnimationAccordion > .vanillaAccordionSubMenu {
+.geotabAnimationAccordion>.vanillaAccordionSubMenu {
     max-height: 0;
     overflow: hidden;
     height: auto;
     display: none
 }
 
-.geotabAnimationAccordion > .vanillaAccordionHeader {
+.geotabAnimationAccordion>.vanillaAccordionHeader {
     cursor: pointer
 }
 
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionHeader {
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionHeader {
     margin: 5px 0 0
 }
 
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionHeader:first-child {
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionHeader:first-child {
     margin-top: 0
 }
 
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionHeader button {
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionHeader button {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -23029,18 +23029,18 @@
     width: 100%
 }
 
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionHeader.activeHeader button {
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionHeader.activeHeader button {
     border: 1px solid #2c7ab1;
     background-color: #2c7ab1;
     color: #fff;
     fill: #fff
 }
 
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionHeader.activeHeader .svgIcon > .accordion-opened {
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionHeader.activeHeader .svgIcon>.accordion-opened {
     display: inline
 }
 
-.geotabAnimationAccordion.defaultAccordionStyle > .vanillaAccordionSubMenu {
+.geotabAnimationAccordion.defaultAccordionStyle>.vanillaAccordionSubMenu {
     line-height: 1.3;
     margin: -1px 0 1px;
     background-color: #fefefe;
@@ -23177,7 +23177,7 @@
     z-index: 10009
 }
 
-#offlineDialogWindow + .vanillaDialogShield {
+#offlineDialogWindow+.vanillaDialogShield {
     z-index: 10006
 }
 
@@ -23573,7 +23573,7 @@
     height: 100%
 }
 
-.verticalResizer > div {
+.verticalResizer>div {
     display: table-cell;
     vertical-align: middle;
     height: 100%
@@ -23718,7 +23718,7 @@
 }
 
 .eastResizerBar.resizerBarHidden .rightArrow,
-.vanillaSortableContainer > .sortableItem .element-hide {
+.vanillaSortableContainer>.sortableItem .element-hide {
     display: none
 }
 
@@ -23907,7 +23907,7 @@
     padding: 0
 }
 
-.vanillaSortableContainer > .sortableItem {
+.vanillaSortableContainer>.sortableItem {
     margin: 0 0 3px;
     padding: .4em .4em .4em 2em;
     overflow: hidden;
@@ -23918,7 +23918,7 @@
     fill: #1f2833
 }
 
-.vanillaSortableContainer > .sortableItem:first-child > .options_viewOrganizerList_makeDefaultButton {
+.vanillaSortableContainer>.sortableItem:first-child>.options_viewOrganizerList_makeDefaultButton {
     display: none
 }
 
@@ -23948,7 +23948,7 @@
     margin: 12px 0 0
 }
 
-.tabsHeader > .tabElement {
+.tabsHeader>.tabElement {
     padding: 8px 12px;
     margin: 0;
     background-color: transparent;
@@ -23963,18 +23963,18 @@
     top: 1px
 }
 
-.tabsHeader > .tabElement:disabled,
+.tabsHeader>.tabElement:disabled,
 .vanilla-tabs__tab:disabled {
     opacity: .35
 }
 
-.tabsHeader > .tabElement.activeTab {
+.tabsHeader>.tabElement.activeTab {
     border: 1px solid #c5dbec;
     border-bottom-color: #fefefe;
     color: #25477b
 }
 
-.tabsHeader > .tabElement:focus {
+.tabsHeader>.tabElement:focus {
     background-color: #f4f4f4
 }
 
@@ -24252,11 +24252,11 @@
     font-weight: initial
 }
 
-.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_month > .central_pane_month_title {
+.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_month>.central_pane_month_title {
     padding-left: 2px
 }
 
-.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_month > .svgIcon {
+.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_month>.svgIcon {
     margin-right: 7px;
     margin-top: 3px
 }
@@ -24270,11 +24270,11 @@
     margin-top: 0
 }
 
-.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_year > .central_pane_month_title {
+.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_year>.central_pane_month_title {
     padding-left: 2px
 }
 
-.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_year > .svgIcon {
+.datepicker_main_container .month_year_tab .central_pane .central_pane_sub .central_pane_year>.svgIcon {
     float: right;
     margin-right: 7px;
     margin-top: 3px
@@ -24538,7 +24538,7 @@
     cursor: pointer
 }
 
-.emptyTreeSelector > .emptyTreePlaceholder {
+.emptyTreeSelector>.emptyTreePlaceholder {
     font-size: 25px;
     font-weight: 900;
     color: #575757;
@@ -24579,8 +24579,8 @@
     overflow: hidden
 }
 
-.planList .planListItem .activeMode .geotabButtonIcons.activateFlag > .allowedFlag,
-.planList .planListItem .activeMode .geotabButtonIcons.deactivateFlag > .disallowedFlag,
+.planList .planListItem .activeMode .geotabButtonIcons.activateFlag>.allowedFlag,
+.planList .planListItem .activeMode .geotabButtonIcons.deactivateFlag>.disallowedFlag,
 .treeContext .dataTreeItem.dataTreeOpened .openedFolder {
     display: inline
 }
@@ -24589,7 +24589,7 @@
     display: none
 }
 
-.treeContext .dataTreeItem.dataTreeOpened + .dataTreeSubFiles {
+.treeContext .dataTreeItem.dataTreeOpened+.dataTreeSubFiles {
     display: block
 }
 
@@ -24631,8 +24631,8 @@
     fill: #25477b
 }
 
-.planList .planListItem .activeMode .geotabButtonIcons > .allowedFlag,
-.planList .planListItem .activeMode .geotabButtonIcons > .disallowedFlag {
+.planList .planListItem .activeMode .geotabButtonIcons>.allowedFlag,
+.planList .planListItem .activeMode .geotabButtonIcons>.disallowedFlag {
     display: none
 }
 
@@ -24640,7 +24640,7 @@
     width: 17px
 }
 
-.planList .planListItem .activeMode .geotabButtonIcons > .disallowedFlag {
+.planList .planListItem .activeMode .geotabButtonIcons>.disallowedFlag {
     color: #575757;
     fill: #575757
 }
@@ -24704,7 +24704,7 @@
     fill: #25477b
 }
 
-.planList #titlePlan > .planCell {
+.planList #titlePlan>.planCell {
     border-bottom: 1px solid #c5dbec
 }
 
@@ -29922,11 +29922,11 @@
     clip: rect(1px, 1px, 1px, 1px)
 }
 
-.background-layer__checkbox:checked ~ .background-layer__img {
+.background-layer__checkbox:checked~.background-layer__img {
     border-color: #0078d3
 }
 
-.background-layer__checkbox:disabled ~ .background-layer__img {
+.background-layer__checkbox:disabled~.background-layer__img {
     opacity: .5
 }
 
@@ -30886,7 +30886,7 @@
     fill: #66788c
 }
 
-.tags-group-select__group-selection > .geotab-filter__wrapper {
+.tags-group-select__group-selection>.geotab-filter__wrapper {
     width: 100%
 }
 
@@ -32842,7 +32842,7 @@
 }
 
 .sheet__header-cell--chart-cell,
-.sheet__row--chart-row > .sheet__row-number {
+.sheet__row--chart-row>.sheet__row-number {
     background-color: #2c7ab1;
     color: #fff
 }
@@ -32863,7 +32863,7 @@
 }
 
 .sheet__cell--chart-cell,
-.sheet__row--chart-row > .sheet__cell {
+.sheet__row--chart-row>.sheet__cell {
     background-color: #e8f3fd
 }
 
@@ -33485,7 +33485,7 @@
     word-wrap: normal
 }
 
-.addins-tabInput:focus + .addins-tabButton {
+.addins-tabInput:focus+.addins-tabButton {
     background-color: #f4f4f4
 }
 
@@ -36417,7 +36417,7 @@
     text-align: right
 }
 
-.dangerousDrivingSelector_InputContainer > .dangerousDrivingSelector_InputLabel {
+.dangerousDrivingSelector_InputContainer>.dangerousDrivingSelector_InputLabel {
     line-height: 1.7em
 }
 
@@ -36575,29 +36575,29 @@
     clip: rect(1px, 1px, 1px, 1px)
 }
 
-.help-section__input:focus + .geo-button,
-.help-section__input:hover + .geo-button {
+.help-section__input:focus+.geo-button,
+.help-section__input:hover+.geo-button {
     color: #1f2833;
     fill: #4e677e;
     border-color: #748faa;
     background-color: #eff2f7
 }
 
-.help-section__input:active + .geo-button {
+.help-section__input:active+.geo-button {
     color: #fff;
     fill: #fff;
     border-color: #748faa;
     background-color: #4e677e
 }
 
-.help-section__input:disabled + .geo-button {
+.help-section__input:disabled+.geo-button {
     color: #c0ccd8;
     fill: #c0ccd8;
     border-color: #c0ccd8;
     background-color: #fff
 }
 
-.help-section__input:checked + .geo-button {
+.help-section__input:checked+.geo-button {
     color: #fff;
     fill: #fff;
     border-color: #748faa;
@@ -36606,22 +36606,22 @@
     border-bottom-right-radius: 0
 }
 
-.help-section__input:focus:checked + .geo-button,
-.help-section__input:hover:checked + .geo-button {
+.help-section__input:focus:checked+.geo-button,
+.help-section__input:hover:checked+.geo-button {
     color: #fff;
     fill: #fff;
     border-color: #748faa;
     background-color: #2f3d4c
 }
 
-.help-section__input:active:checked + .geo-button {
+.help-section__input:active:checked+.geo-button {
     color: #fff;
     fill: #fff;
     border-color: #748faa;
     background-color: #2f3d4c
 }
 
-.help-section__input:disabled:checked + .geo-button {
+.help-section__input:disabled:checked+.geo-button {
     color: #fff;
     fill: #fff;
     border-color: #748faa;
@@ -36733,17 +36733,17 @@
     width: 100%
 }
 
-.help-panel-container.help-panel-visible > .help-panel,
+.help-panel-container.help-panel-visible>.help-panel,
 .help-tooltip.help-content {
     display: block
 }
 
-.help-panel-container.help-panel-visible > .geotab-page {
+.help-panel-container.help-panel-visible>.geotab-page {
     display: none
 }
 
-#tripsHistoryId > .westPane:not(.hiddenPane) ~ .westResizerBar > .verticalResizer,
-.help-panel-container:not(.help-panel-visible) > .help-panel {
+#tripsHistoryId>.westPane:not(.hiddenPane)~.westResizerBar>.verticalResizer,
+.help-panel-container:not(.help-panel-visible)>.help-panel {
     display: none
 }
 
@@ -36988,7 +36988,7 @@
     padding: 0
 }
 
-.checkmateListBuilder .checkmateListTable > li {
+.checkmateListBuilder .checkmateListTable>li {
     list-style-type: none;
     padding: 0
 }
@@ -37299,45 +37299,45 @@
     text-decoration: none
 }
 
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails > .blockDetails {
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails>.blockDetails {
     display: inline-block;
     vertical-align: middle;
     padding-right: .8em;
     margin-bottom: -.7em
 }
 
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment.completedRows > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.completedRows > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment.completedRows > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails.completedRows > .blockDetails {
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment.completedRows>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.completedRows>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment.completedRows>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails.completedRows>.blockDetails {
     display: block;
     margin-bottom: 0;
     vertical-align: middle
 }
 
 #liveMap_viewSettingsPopup .horizontalButtonSet .rightGeotabIcon .geotabButtonLabelText,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment.completedRows > .blockDetails > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.completedRows > .blockDetails > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment.completedRows > .blockDetails > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails.completedRows > .blockDetails > .dataItem {
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment.completedRows>.blockDetails>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.completedRows>.blockDetails>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment.completedRows>.blockDetails>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails.completedRows>.blockDetails>.dataItem {
     display: inline-block
 }
 
 .checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment a.dataItem,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment:not(.completedRows) > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment:not(.completedRows) > span.dataItem,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment:not(.completedRows)>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment:not(.completedRows)>span.dataItem,
 .checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails a.dataItem,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails:not(.completedRows) > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails:not(.completedRows) > span.dataItem,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails:not(.completedRows)>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails:not(.completedRows)>span.dataItem,
 .checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment a.dataItem,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment:not(.completedRows) > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment:not(.completedRows) > span.dataItem,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment:not(.completedRows)>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment:not(.completedRows)>span.dataItem,
 .checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails a.dataItem,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails:not(.completedRows) > .blockDetails,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails:not(.completedRows) > span.dataItem {
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails:not(.completedRows)>.blockDetails,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails:not(.completedRows)>span.dataItem {
     line-height: 32px
 }
 
@@ -37351,10 +37351,10 @@
     position: relative
 }
 
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment .dataItem > .svgIcon,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails .dataItem > .svgIcon,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment .dataItem > .svgIcon,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails .dataItem > .svgIcon {
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment .dataItem>.svgIcon,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails .dataItem>.svgIcon,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment .dataItem>.svgIcon,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails .dataItem>.svgIcon {
     padding-right: 4px
 }
 
@@ -37383,12 +37383,12 @@
     max-width: 98%
 }
 
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment.horizontalDataSplit > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.horizontalDataSplit > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRow .horizontalDataSplit > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment.horizontalDataSplit > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails.horizontalDataSplit > .dataItem,
-.checkmateListBuilder .checkmateListBuilderRowContainer .horizontalDataSplit > .dataItem {
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowComment.horizontalDataSplit>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.horizontalDataSplit>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRow .horizontalDataSplit>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowComment.horizontalDataSplit>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRowContainer .checkmateListBuilderRowDetails.horizontalDataSplit>.dataItem,
+.checkmateListBuilder .checkmateListBuilderRowContainer .horizontalDataSplit>.dataItem {
     padding-right: 15px
 }
 
@@ -37422,7 +37422,7 @@
     color: #757575
 }
 
-.checkmateListBuilder .checkmateListBuilderRowIcons + .checkmateListBuilderRowIcons {
+.checkmateListBuilder .checkmateListBuilderRowIcons+.checkmateListBuilderRowIcons {
     margin-right: 5px
 }
 
@@ -37456,7 +37456,7 @@
     vertical-align: text-bottom
 }
 
-.checkmateField > .checkmateListBuilder {
+.checkmateField>.checkmateListBuilder {
     border-radius: 5px
 }
 
@@ -37550,8 +37550,8 @@
         float: left
     }
 
-    .checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.completedRows > .blockDetails,
-    .checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails > .dataItem {
+    .checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails.completedRows>.blockDetails,
+    .checkmateListBuilder .checkmateListBuilderRow .checkmateListBuilderRowDetails>.dataItem {
         display: inline-block
     }
 
@@ -37724,7 +37724,7 @@
     align-items: center
 }
 
-.checkmateListBuilder .g-row .g-ctrl > .geo-button,
+.checkmateListBuilder .g-row .g-ctrl>.geo-button,
 .checkmateListBuilder .g-row .g-ctrl__item {
     margin-right: 3px;
     float: right
@@ -37864,7 +37864,7 @@
     padding-bottom: 50px
 }
 
-.g-row .g-sub-main__ticket_comments > .g-item {
+.g-row .g-sub-main__ticket_comments>.g-item {
     padding-right: 10px
 }
 
@@ -37883,7 +37883,7 @@
     margin-right: 1rem
 }
 
-.checkmateField > .checkmateListBuilder {
+.checkmateField>.checkmateListBuilder {
     border: 0
 }
 
@@ -38489,7 +38489,7 @@
     color: #2b6436
 }
 
-.shortOptionsMenu > .geotabOptionsMenu {
+.shortOptionsMenu>.geotabOptionsMenu {
     min-width: 0
 }
 
@@ -38520,10 +38520,10 @@
     border-top: none
 }
 
-.geotabOptionsMenu .geotabOptionsMenuFieldset > .periodPicker_periodLegend,
-.geotabOptionsMenu .geotabOptionsMenuFieldset > .rightOptionsMenuLabel,
-.geotabOptionsMenu .periodPicker_period > .periodPicker_periodLegend,
-.geotabOptionsMenu .periodPicker_period > .rightOptionsMenuLabel {
+.geotabOptionsMenu .geotabOptionsMenuFieldset>.periodPicker_periodLegend,
+.geotabOptionsMenu .geotabOptionsMenuFieldset>.rightOptionsMenuLabel,
+.geotabOptionsMenu .periodPicker_period>.periodPicker_periodLegend,
+.geotabOptionsMenu .periodPicker_period>.rightOptionsMenuLabel {
     font-size: .9em;
     color: #25477b;
     text-transform: uppercase
@@ -38548,40 +38548,40 @@
     padding: 7px 0 3px
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement {
     margin-bottom: 10px
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .geotabOptionsMenuElementValue .checkmateFormEditField {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .geotabOptionsMenuElementValue .checkmateFormEditField {
     width: 100%
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .geotabOptionsMenuElementValue .horizontalButtonSet {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .geotabOptionsMenuElementValue .horizontalButtonSet {
     overflow: visible
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .geotabOptionsMenuElementValue textarea.checkmateFormEditField {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .geotabOptionsMenuElementValue textarea.checkmateFormEditField {
     padding: 0;
     resize: none
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .geotabOptionsMenuElementValue .numeric {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .geotabOptionsMenuElementValue .numeric {
     width: 55px;
     margin-right: 5px
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .geotabOptionsMenuElementValue.wideOptionsTextField {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .geotabOptionsMenuElementValue.wideOptionsTextField {
     width: 100%
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .geotabOptionsMenuElementValue .optionsMenu_AutocompleteButton {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .geotabOptionsMenuElementValue .optionsMenu_AutocompleteButton {
     float: right;
     clear: right;
     margin-top: .5em;
     margin-left: 5px
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .filterSelectionInformation {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .filterSelectionInformation {
     float: left;
     font-weight: 700;
     min-height: 1.1rem;
@@ -38591,18 +38591,18 @@
     max-width: 430px
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .filterSelectionInformation .optionsMenu_filterSelectedItems {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .filterSelectionInformation .optionsMenu_filterSelectedItems {
     font-weight: 400
 }
 
-.geotabOptionsMenu .geotabOptionsMenuElements > .geotabOptionsMenuElement .filterSelectionInformation--with-selection {
+.geotabOptionsMenu .geotabOptionsMenuElements>.geotabOptionsMenuElement .filterSelectionInformation--with-selection {
     display: flex;
     width: 100%;
     max-height: 120px;
     margin-bottom: 0
 }
 
-.geotabOptionsMenu > .geotabOptionsMenuButtonSeperator {
+.geotabOptionsMenu>.geotabOptionsMenuButtonSeperator {
     clear: both;
     border-color: #c5dbec;
     border-style: solid none none
@@ -38619,13 +38619,13 @@
     margin-right: 0
 }
 
-.optionsMenu_AutocompleteButton + .optionsMenu_AutocompleteButton {
+.optionsMenu_AutocompleteButton+.optionsMenu_AutocompleteButton {
     clear: none;
     margin-right: 0
 }
 
 @media (min-width:768px) {
-    .geotabOptionsMenu.geotabAnimationAccordion > .vanillaAccordionSubMenu {
+    .geotabOptionsMenu.geotabAnimationAccordion>.vanillaAccordionSubMenu {
         max-height: none !important;
         display: block !important
     }
@@ -38645,7 +38645,7 @@
         min-width: 0
     }
 
-    .geotabOptionsMenu .geotabOptionsMenuElement > .geotabOptionsMenuElementLabel {
+    .geotabOptionsMenu .geotabOptionsMenuElement>.geotabOptionsMenuElementLabel {
         padding-top: 3px;
         margin-top: 0
     }
@@ -38808,12 +38808,12 @@
     background: #fffcdd 50% 50%repeat-x
 }
 
-.checkmatePopout .popoutContent > .geotabButtonIcons {
+.checkmatePopout .popoutContent>.geotabButtonIcons {
     top: 0;
     right: 0
 }
 
-.checkmatePopout .popoutContent > .geotabButtonIcons:hover {
+.checkmatePopout .popoutContent>.geotabButtonIcons:hover {
     background: #f4f4f4
 }
 
@@ -38868,7 +38868,7 @@
     left: 4px
 }
 
-.geotabButtonIcons ~ .warningIcon {
+.geotabButtonIcons~.warningIcon {
     left: 3px;
     top: 2px
 }
@@ -38912,9 +38912,9 @@
     margin-top: 9px
 }
 
-.geotabToolbar > .geo-button,
-.geotabToolbar > .horizontalButtonSet,
-.geotabToolbar > .toolbarSeparatedBlock:not(.horizontalButtonSet) > .geo-button {
+.geotabToolbar>.geo-button,
+.geotabToolbar>.horizontalButtonSet,
+.geotabToolbar>.toolbarSeparatedBlock:not(.horizontalButtonSet)>.geo-button {
     margin-right: 3px
 }
 
@@ -38923,7 +38923,7 @@
 }
 
 .geotabToolbar .geo-button:active,
-.geotabToolbar .geotabSwitchButton:checked + .geo-button {
+.geotabToolbar .geotabSwitchButton:checked+.geo-button {
     background-color: #ededed;
     background-image: linear-gradient(to bottom, #ebebeb, #f0f0f0);
     background-repeat: repeat-x;
@@ -38933,13 +38933,13 @@
     border: 1px #d2d2d2 solid
 }
 
-.geotabToolbar .geotabSwitchButton:checked:focus + .geo-button {
+.geotabToolbar .geotabSwitchButton:checked:focus+.geo-button {
     background-color: #e0e0e0;
     background-image: linear-gradient(to bottom, #dedede, #e3e3e3);
     background-repeat: repeat-x
 }
 
-.geotabToolbar .geotabSwitchButton:focus + .geo-button {
+.geotabToolbar .geotabSwitchButton:focus+.geo-button {
     background-color: #e7e7e7;
     background-image: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
     background-repeat: repeat-x;
@@ -38948,11 +38948,11 @@
     border-color: #c4c4c4
 }
 
-.geotabToolbar > .checkmateSearchTextbox,
-.geotabToolbar > .geo-button:not(.customButton),
-.geotabToolbar > .geotabFormEditField,
-.geotabToolbar > .horizontalButtonSet,
-.geotabToolbar > .toolbarSeparatedBlock {
+.geotabToolbar>.checkmateSearchTextbox,
+.geotabToolbar>.geo-button:not(.customButton),
+.geotabToolbar>.geotabFormEditField,
+.geotabToolbar>.horizontalButtonSet,
+.geotabToolbar>.toolbarSeparatedBlock {
     float: left
 }
 
@@ -39015,7 +39015,7 @@ button.toolbarCell {
     margin-left: 5px
 }
 
-#loggedInState_support > .toolbarCellText {
+#loggedInState_support>.toolbarCellText {
     margin-left: 0
 }
 
@@ -39426,7 +39426,7 @@ button.toolbarCell {
     display: block
 }
 
-.inputWaiting.waitingVisible + .checkmateFormEditField {
+.inputWaiting.waitingVisible+.checkmateFormEditField {
     border-top-left-radius: 0;
     border-top-right-radius: 0
 }
@@ -40099,24 +40099,24 @@ button.toolbarCell {
     clip: rect(1px, 1px, 1px, 1px)
 }
 
-.selectable-list-item__checkbox:focus + .selectable-list-item__label {
+.selectable-list-item__checkbox:focus+.selectable-list-item__label {
     background-color: #eff2f7
 }
 
-.selectable-list-item__checkbox:checked + .selectable-list-item__label {
+.selectable-list-item__checkbox:checked+.selectable-list-item__label {
     background-color: #0078d3;
     color: #fff
 }
 
-.selectable-list-item__checkbox:checked + .selectable-list-item__label:hover {
+.selectable-list-item__checkbox:checked+.selectable-list-item__label:hover {
     background-color: #005aa8
 }
 
-.selectable-list-item__checkbox:checked + .selectable-list-item__label .group-list-icon {
+.selectable-list-item__checkbox:checked+.selectable-list-item__label .group-list-icon {
     fill: #fff
 }
 
-.selectable-list-item__checkbox:checked:focus + .selectable-list-item__label {
+.selectable-list-item__checkbox:checked:focus+.selectable-list-item__label {
     background-color: #005aa8
 }
 
@@ -40875,18 +40875,18 @@ button.toolbarCell {
     left: -9999px
 }
 
-.interactive-tile__checkbox:focus + .interactive-tile__label,
-.interactive-tile__checkbox:hover + .interactive-tile__label {
+.interactive-tile__checkbox:focus+.interactive-tile__label,
+.interactive-tile__checkbox:hover+.interactive-tile__label {
     border-color: #748faa
 }
 
-.interactive-tile__checkbox:checked + .interactive-tile__label {
+.interactive-tile__checkbox:checked+.interactive-tile__label {
     border-color: #0078d3;
     background-color: #f9fafb
 }
 
-.interactive-tile__checkbox:checked:focus + .interactive-tile__label,
-.interactive-tile__checkbox:checked:hover + .interactive-tile__label {
+.interactive-tile__checkbox:checked:focus+.interactive-tile__label,
+.interactive-tile__checkbox:checked:hover+.interactive-tile__label {
     border-color: #748faa
 }
 
@@ -42954,7 +42954,7 @@ button.toolbarCell {
     background-color: var(--action-tertiary--active)
 }
 
-.specify-database-options > .zen-menu-button > .zen-caption > .zen-caption__content {
+.specify-database-options>.zen-menu-button>.zen-caption>.zen-caption__content {
     overflow: visible
 }
 
@@ -43092,7 +43092,7 @@ button.toolbarCell {
     color: var(--text-error-message)
 }
 
-.input--full-width > .zen-form-field__input-container > .zen-text-input.zen-form-field__input {
+.input--full-width>.zen-form-field__input-container>.zen-text-input.zen-form-field__input {
     width: 100%
 }
 
@@ -44400,7 +44400,7 @@ button.toolbarCell {
     margin: 1em 0 .5em
 }
 
-.single-day-graph-view-header > .zen-pill-new {
+.single-day-graph-view-header>.zen-pill-new {
     margin-left: 5px
 }
 
@@ -45215,8 +45215,8 @@ button.toolbarCell {
 }
 
 .electrification-main-card,
-.electrification-main-card > div,
-.electrification-main-card > div > div {
+.electrification-main-card>div,
+.electrification-main-card>div>div {
     height: auto !important;
     max-height: none !important
 }
@@ -46357,11 +46357,11 @@ h4 {
 }
 
 @media (min-width:700px) {
-    #tripsHistoryId > .eastResizerBar .leftArrow {
+    #tripsHistoryId>.eastResizerBar .leftArrow {
         display: block
     }
 
-    #tripsHistoryId > .eastResizerBar .rightArrow {
+    #tripsHistoryId>.eastResizerBar .rightArrow {
         display: none
     }
 }
@@ -46379,7 +46379,7 @@ h4 {
         padding-top: 0 !important
     }
 
-    #tripsHistoryId #tripsHistory_map:not(.hiddenPane) ~ .eastResizerBar {
+    #tripsHistoryId #tripsHistory_map:not(.hiddenPane)~.eastResizerBar {
         left: 35px !important
     }
 
@@ -46397,7 +46397,7 @@ h4 {
 }
 
 @media (max-width:768px) {
-    #tripsHistoryId .checkmateListBuilderRow.g-row > .g-main {
+    #tripsHistoryId .checkmateListBuilderRow.g-row>.g-main {
         padding: 0
     }
 }
@@ -47241,7 +47241,7 @@ h4 {
     word-break: break-word
 }
 
-#defectList_id .defectTitle > .defectTitle__severity {
+#defectList_id .defectTitle>.defectTitle__severity {
     display: none;
     font-weight: 700;
     font-size: .7em;
@@ -47344,8 +47344,8 @@ h4 {
 }
 
 #defectList_id .defectEditor__name,
-#dvir_id .checkmateField.notFlexible .selectContainer > .checkmateFormEditField,
-#dvir_id .selectContainer > textarea {
+#dvir_id .checkmateField.notFlexible .selectContainer>.checkmateFormEditField,
+#dvir_id .selectContainer>textarea {
     width: 100%
 }
 
@@ -47457,7 +47457,7 @@ h4 {
     clear: both
 }
 
-#dvir_repairDefectsId .repair-checkbox + .repair-checkbox {
+#dvir_repairDefectsId .repair-checkbox+.repair-checkbox {
     margin-top: 4px
 }
 
@@ -47504,16 +47504,16 @@ h4 {
     height: calc(100% + 2px)
 }
 
-.dvir-defect-severity-icon--critical > .svgIcon {
+.dvir-defect-severity-icon--critical>.svgIcon {
     fill: #ca0b0b
 }
 
-.dvir-defect-severity-icon--normal > .svgIcon {
+.dvir-defect-severity-icon--normal>.svgIcon {
     fill: #25477b;
     transform: rotate(180deg)
 }
 
-.dvir-defect-severity-icon--unregulated > .svgIcon {
+.dvir-defect-severity-icon--unregulated>.svgIcon {
     fill: #888
 }
 
@@ -47550,7 +47550,7 @@ h4 {
     flex-direction: column-reverse
 }
 
-.dvirs-page .left-col__image > .svgIcon {
+.dvirs-page .left-col__image>.svgIcon {
     width: 14px;
     height: 16px;
     top: 0;
@@ -47620,12 +47620,12 @@ h4 {
 
 .dvir-parent-list .toggle-defect-button:active,
 .dvir-parent-list .toggle-defect-button:focus,
-.dvir-parent-list li.defect-parent-item input[type=checkbox]:focus + div > label {
+.dvir-parent-list li.defect-parent-item input[type=checkbox]:focus+div>label {
     background: #e5f7fd
 }
 
 .dvir-parent-list li.defect-parent-item .collapseIcon,
-.dvir-parent-list li.defect-parent-item > input[type=checkbox] + .parent-heading + div.hidden-div {
+.dvir-parent-list li.defect-parent-item>input[type=checkbox]+.parent-heading+div.hidden-div {
     display: none
 }
 
@@ -47633,7 +47633,7 @@ h4 {
     display: block
 }
 
-.dvir-parent-list li.defect-parent-item > input[type=checkbox]:checked + .parent-heading .expandIcon {
+.dvir-parent-list li.defect-parent-item>input[type=checkbox]:checked+.parent-heading .expandIcon {
     display: none
 }
 
@@ -47646,7 +47646,7 @@ h4 {
     padding: 6px 0
 }
 
-.dvir-parent-list li.defect-parent-item .parent-heading > label {
+.dvir-parent-list li.defect-parent-item .parent-heading>label {
     border-radius: 4px;
     display: flex;
     align-items: baseline;
@@ -47654,7 +47654,7 @@ h4 {
     padding: 5px
 }
 
-.dvir-parent-list li.defect-parent-item .parent-heading > label > .svgIcon {
+.dvir-parent-list li.defect-parent-item .parent-heading>label>.svgIcon {
     fill: #005aa8;
     margin-right: 1rem;
     flex-shrink: 0
@@ -47685,7 +47685,7 @@ h4 {
     font-size: 12px
 }
 
-.dvir-parent-list li.defect-parent-item .child-heading > span.list-title {
+.dvir-parent-list li.defect-parent-item .child-heading>span.list-title {
     display: flex;
     justify-content: flex-start;
     align-items: center
@@ -47709,7 +47709,7 @@ h4 {
     font-size: 12px
 }
 
-.dvir-parent-list .geo-checkbox__input:disabled + .geo-checkbox__label .geo-checkbox__label-text {
+.dvir-parent-list .geo-checkbox__input:disabled+.geo-checkbox__label .geo-checkbox__label-text {
     color: #c0ccd8;
     font-style: italic
 }
@@ -47872,7 +47872,7 @@ h4 {
         color: #5293c6
     }
 
-    #dvir_printVersion ._defected.severity_normal > .item__name,
+    #dvir_printVersion ._defected.severity_normal>.item__name,
     #dvir_printVersion .dvirPrint__header .header__pageName {
         color: #25477b
     }
@@ -47912,11 +47912,11 @@ h4 {
         font-weight: 700
     }
 
-    #dvir_printVersion ._defected.severity_critical > .item__name {
+    #dvir_printVersion ._defected.severity_critical>.item__name {
         color: #ca0b0b
     }
 
-    #dvir_printVersion ._defected.severity_unregulated > .item__name {
+    #dvir_printVersion ._defected.severity_unregulated>.item__name {
         color: #888
     }
 
@@ -48511,7 +48511,7 @@ h4 {
         padding-right: 20px
     }
 
-    #engineFaults_id .checkmateListBuilderRow > .multipleSelection_checkbox {
+    #engineFaults_id .checkmateListBuilderRow>.multipleSelection_checkbox {
         top: 3px;
         right: 10px
     }
@@ -50236,7 +50236,7 @@ h4 {
     align-items: center
 }
 
-.pandingDevices-help > .pendingHelpSwitcher {
+.pandingDevices-help>.pendingHelpSwitcher {
     margin: 0 8px
 }
 
@@ -50543,7 +50543,7 @@ h4 {
     float: left
 }
 
-#device_Id .beepField > .label {
+#device_Id .beepField>.label {
     width: 70%;
     padding: 6px 7px;
     display: inline-block
@@ -50619,7 +50619,7 @@ h4 {
     font-weight: 700
 }
 
-#device_billedForButton > .serviceButtonIcon {
+#device_billedForButton>.serviceButtonIcon {
     position: static;
     width: 16px;
     line-height: 17px
@@ -50656,7 +50656,7 @@ h4 {
         margin: 3px 0
     }
 
-    #device_Id .beepField > .label {
+    #device_Id .beepField>.label {
         width: 100%
     }
 
@@ -51457,7 +51457,7 @@ h4 {
     width: 1344px
 }
 
-.dashboard-item__link > :first-child {
+.dashboard-item__link> :first-child {
     margin: 0 auto
 }
 
@@ -51664,7 +51664,7 @@ h4 {
         display: block
     }
 
-    .engine-data-profile .address-visibility > .grid__text {
+    .engine-data-profile .address-visibility>.grid__text {
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
@@ -52006,7 +52006,7 @@ h4 {
     }
 }
 
-.notifications__datails > .primaryData {
+.notifications__datails>.primaryData {
     padding-right: 10px
 }
 
@@ -52069,7 +52069,7 @@ h4 {
     margin-right: 5px
 }
 
-.route-edit-new-zone-action-expandable .add-stop-button:hover + .line {
+.route-edit-new-zone-action-expandable .add-stop-button:hover+.line {
     border-top: 1px solid #0078d3
 }
 
@@ -52095,7 +52095,7 @@ h4 {
     background-color: #fff
 }
 
-.route-edit-new-zone-action-expandable .add-stop-button:not(:hover) + .line {
+.route-edit-new-zone-action-expandable .add-stop-button:not(:hover)+.line {
     border-top: 1px solid #c0ccd8
 }
 
@@ -52186,7 +52186,7 @@ h4 {
     align-items: flex-start
 }
 
-.route-edit-details .form .checkmateField > :not(label) {
+.route-edit-details .form .checkmateField> :not(label) {
     flex: 1
 }
 
@@ -52303,7 +52303,7 @@ h4 {
     align-items: center
 }
 
-.route-edit-details .route-items-container .route-way-point .route-way-point__row-container .route-way-point__location-toggle-container > .tooltip {
+.route-edit-details .route-items-container .route-way-point .route-way-point__row-container .route-way-point__location-toggle-container>.tooltip {
     position: absolute
 }
 
@@ -52322,7 +52322,7 @@ h4 {
     color: #202328
 }
 
-.route-edit-details .route-items-container .route-way-point .route-way-point__row-container:nth-child(2) > label {
+.route-edit-details .route-items-container .route-way-point .route-way-point__row-container:nth-child(2)>label {
     margin-left: 40px
 }
 
@@ -52398,11 +52398,11 @@ h4 {
     list-style-type: none
 }
 
-.route-edit-details .route-items-container .route-plan-item ul .stop-field > .route_ArrivalDistance,
-.route-edit-details .route-items-container .route-plan-item ul .stop-field > .route_ArrivalDuration,
-.route-edit-details .route-items-container .route-plan-item ul .stop-field > .route_Departure,
-.route-edit-details .route-items-container .route-plan-item ul .stop-field > .route_Start,
-.route-edit-details .route-items-container .route-plan-item ul .stop-field > .route_StopDuration {
+.route-edit-details .route-items-container .route-plan-item ul .stop-field>.route_ArrivalDistance,
+.route-edit-details .route-items-container .route-plan-item ul .stop-field>.route_ArrivalDuration,
+.route-edit-details .route-items-container .route-plan-item ul .stop-field>.route_Departure,
+.route-edit-details .route-items-container .route-plan-item ul .stop-field>.route_Start,
+.route-edit-details .route-items-container .route-plan-item ul .stop-field>.route_StopDuration {
     width: 120px;
     height: 32px
 }
@@ -52524,8 +52524,8 @@ h4 {
 
 @media (min-width:992px) {
 
-    .time-container:has(.route_arrivalEarlierWarning) ~ .time-container:nth-of-type(n+2):nth-of-type(n+3),
-    .time-container:has(.route_arrivalLateWarning) ~ .time-container:nth-of-type(n+2):nth-of-type(n+3) {
+    .time-container:has(.route_arrivalEarlierWarning)~.time-container:nth-of-type(n+2):nth-of-type(n+3),
+    .time-container:has(.route_arrivalLateWarning)~.time-container:nth-of-type(n+2):nth-of-type(n+3) {
         margin-top: 14px
     }
 }
@@ -52553,8 +52553,8 @@ h4 {
         justify-content: end
     }
 
-    .route-edit-details .route-items-container .route-plan-item ul .time-container:has(.route_arrivalEarlierWarning) + .time-container,
-    .route-edit-details .route-items-container .route-plan-item ul .time-container:has(.route_arrivalLateWarning) + .time-container {
+    .route-edit-details .route-items-container .route-plan-item ul .time-container:has(.route_arrivalEarlierWarning)+.time-container,
+    .route-edit-details .route-items-container .route-plan-item ul .time-container:has(.route_arrivalLateWarning)+.time-container {
         margin-top: 14px
     }
 
@@ -53887,7 +53887,7 @@ h4 {
 }
 
 .rules_widgetColumn .large-widget,
-.rules_widgetColumn > .widget {
+.rules_widgetColumn>.widget {
     float: left;
     display: flex;
     flex-wrap: wrap;
@@ -53895,15 +53895,15 @@ h4 {
     margin: 0 1em .4em 0
 }
 
-#rule_tabs_2 #conditionsBuilder_moreConditions > div,
+#rule_tabs_2 #conditionsBuilder_moreConditions>div,
 .rules_widgetColumn .large-widget .rules_columnTitle,
-.rules_widgetColumn > .widget .rules_columnTitle {
+.rules_widgetColumn>.widget .rules_columnTitle {
     padding-top: 0
 }
 
 #rules_defaultSimpleRulesId .widget .rules_input,
 .rules_widgetColumn .large-widget .rules_input,
-.rules_widgetColumn > .widget .rules_input {
+.rules_widgetColumn>.widget .rules_input {
     margin-top: 0
 }
 
@@ -54155,10 +54155,10 @@ h4 {
     display: none
 }
 
-#notificationTemplateSMS_Text.error + .zenith-input-error-mesage,
+#notificationTemplateSMS_Text.error+.zenith-input-error-mesage,
 .dist-list__option-lg,
 .media-upload--show-video-options .media-upload__video-option,
-.notification-template-sms__field-description > span {
+.notification-template-sms__field-description>span {
     display: block
 }
 
@@ -55376,7 +55376,7 @@ h4 {
 }
 
 @media (max-width:480px) {
-    .reminder-notification__error-border > .error-message {
+    .reminder-notification__error-border>.error-message {
         padding-left: 5px
     }
 
@@ -55657,7 +55657,7 @@ h4 {
     padding-bottom: 6px
 }
 
-#notificationTemplateSMS_Text + .zenith-input-error-mesage,
+#notificationTemplateSMS_Text+.zenith-input-error-mesage,
 .upcoming-maintenance--pagination-hidden {
     display: none
 }
@@ -58104,7 +58104,7 @@ h4 {
     padding-left: 8px
 }
 
-.unidentifiedDriving-row__action-button--save .geo-button + .geo-button {
+.unidentifiedDriving-row__action-button--save .geo-button+.geo-button {
     margin-top: 8px
 }
 
@@ -59135,7 +59135,7 @@ h4 {
     word-break: break-word
 }
 
-.columns-filter__chbx:focus + .columns-filter__label,
+.columns-filter__chbx:focus+.columns-filter__label,
 .columns-filter__reset:focus {
     border-color: #2c7ab1
 }
@@ -61953,7 +61953,7 @@ h4 {
         width: 100%
     }
 
-    .zenith-header__filter-options-popup .geo-options-menu__default-elements > :last-child {
+    .zenith-header__filter-options-popup .geo-options-menu__default-elements> :last-child {
         padding-bottom: 60px
     }
 
@@ -65463,7 +65463,7 @@ html:lang(zh-Hans) body {
     font-family: "Noto Sans Japanese", Roboto, "Segoe UI", Segoe, "Helvetica Neue", Helvetica, sans-serif
 }
 
-.geotab-page--empty > .checkmateListBuilder,
+.geotab-page--empty>.checkmateListBuilder,
 .svgSprite {
     display: none
 }
@@ -65504,7 +65504,7 @@ html:lang(zh-Hans) body {
     list-style: none
 }
 
-.inlineList > .inlineItem {
+.inlineList>.inlineItem {
     display: inline-block;
     padding-right: 5px;
     padding-left: 5px
@@ -65689,7 +65689,7 @@ html:lang(zh-Hans) body {
     width: 100%
 }
 
-.checkmateReportBuilderInfoBar .total > .value {
+.checkmateReportBuilderInfoBar .total>.value {
     pointer-events: none
 }
 
@@ -65805,8 +65805,8 @@ html:lang(zh-Hans) body {
 }
 
 #hosLog_dateTimeId,
-#hosLog_id .checkmateField .selectContainer > input,
-#hosLog_id .checkmateField .selectContainer > textarea {
+#hosLog_id .checkmateField .selectContainer>input,
+#hosLog_id .checkmateField .selectContainer>textarea {
     width: 100%
 }
 
@@ -65996,7 +65996,7 @@ html:lang(zh-Hans) body {
     font-size: .9em
 }
 
-.loginDialog #savedSessions.inlineList > .inlineItem {
+.loginDialog #savedSessions.inlineList>.inlineItem {
     padding-left: 0;
     display: inline-block
 }
@@ -66064,10 +66064,10 @@ html:lang(zh-Hans) body {
     list-style-type: none
 }
 
-.route_routePlanItem .routePlanItem > .route_ArrivalDistance,
-.route_routePlanItem .routePlanItem > .route_ArrivalDuration,
-.route_routePlanItem .routePlanItem > .route_Start,
-.route_routePlanItem .routePlanItem > .route_StopDuration {
+.route_routePlanItem .routePlanItem>.route_ArrivalDistance,
+.route_routePlanItem .routePlanItem>.route_ArrivalDuration,
+.route_routePlanItem .routePlanItem>.route_Start,
+.route_routePlanItem .routePlanItem>.route_StopDuration {
     width: 65px
 }
 
@@ -66143,7 +66143,7 @@ html:lang(zh-Hans) body {
     padding: 1em 0
 }
 
-#user_AutDesc > .alert,
+#user_AutDesc>.alert,
 .eventsList .eventsMain .eventDataItem .defects {
     margin: 0
 }
@@ -66876,8 +66876,8 @@ html:lang(zh-Hans) body {
         min-width: inherit
     }
 
-    #hosLogs_id .checkmateListBuilderRow .checkmateListBuilderRowDetails.horizontalDataSplit > .dataItem,
-    #hosLogs_id .checkmateListBuilderSubTitle .checkmateListBuilderRowDetails.horizontalDataSplit > .dataItem {
+    #hosLogs_id .checkmateListBuilderRow .checkmateListBuilderRowDetails.horizontalDataSplit>.dataItem,
+    #hosLogs_id .checkmateListBuilderSubTitle .checkmateListBuilderRowDetails.horizontalDataSplit>.dataItem {
         line-height: 1em
     }
 
@@ -66948,7 +66948,7 @@ html:lang(zh-Hans) body {
         float: left
     }
 
-    #hosLogs_id #hosLogs_modificationsInfo .dataItem > .geotabButtonIcons {
+    #hosLogs_id #hosLogs_modificationsInfo .dataItem>.geotabButtonIcons {
         position: inherit;
         top: 0
     }

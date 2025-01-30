@@ -12,15 +12,12 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
   /**@type {HTMLTableSectionElement}*/
   let elDeviceTableBody
 
-  let elSubmit
-  let elOdoInput
-  let elEHInput
-
-  let elError
+  /**@type {HTMLDivElement} */
+  let elNotice
 
   /** @type {Element} message */
   let errorHandler = message => {
-    elError.innerText = message
+    elNotice.innerText = message
   }
 
   let sortNameEntities = (a, b) => {
@@ -93,6 +90,7 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
       api = freshApi;
 
       elDeviceTableBody = document.querySelector('.customdevicemgr-table__body')
+      elNotice = elAddin.querySelector(`${appName}-notice`)
 
       // Loading translations if available
       if (freshState.translate) {

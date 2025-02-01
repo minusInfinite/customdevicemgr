@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
@@ -21,7 +21,12 @@ module.exports = {
     open: true,
     hot: true,
     compress: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    devMiddleware: {
+      mimeTypes: {
+        'text/css': ['css']
+      }
+    }
   },
   devtool: 'source-map',
   module: {
@@ -38,7 +43,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader", "postcss-loader",
+          'css-loader', 'postcss-loader',
         ]
       },
       {
@@ -47,9 +52,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            
+
             presets: ['@babel/preset-env']
-            
+
           }
         }
       },
@@ -61,8 +66,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.css",
-      chunkFilename: "styles.css"
+      filename: 'styles.css',
+      chunkFilename: 'styles.css'
     }),
     new HtmlWebpackPlugin({
       title: 'customdevicemgr',

@@ -32,6 +32,11 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
     }
   }
 
+  /** @type {EventListener} */
+  let updateStatusData = () => {
+
+  }
+
   let getStatusData = async (deviceId) => {
     const nowISO = new Date().toISOString()
     return new Promise((resolve, reject) => {
@@ -115,7 +120,6 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
     */
     focus: function (freshApi, freshState) {
       elAddin.style.display = 'initial';
-      const nowISO = new Date().toISOString()
       // getting the current user to display in the UI
 
       // getting the current user to display in the UI
@@ -175,15 +179,22 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
           snCell.appendChild(snContent)
           odoCell.classList.add('entities-list__row-cell', 'ellipsis')
           odoContent.classList.add('list-column-numeric', 'geotabFormEditField')
+          odoContent.dataset.currentOdo = `${odometer}`
+          odoContent.id = `${device.id}-odo`
           odoContent.type = 'number'
           odoContent.value = Math.ceil(odometer / 1000)
           odoCell.appendChild(odoContent)
           ehCell.classList.add('entities-list__row-cell', 'ellipsis')
           ehContent.classList.add('list-column-numeric', 'geotabFormEditField')
+          ehContent.id = `${device.id}-eh`
+          ehContent.dataset.currentHours = `${engineHours}`
+          ehContent.type = 'number'
           ehContent.value = Math.floor(engineHours / 60 / 60)
           ehCell.appendChild(ehContent)
           submitCell.classList.add('entities-list__row-cell', 'entities-list__row-cell--last', 'ellipsis')
           submitButton.classList.add('geo-button', 'geo-button--action')
+          submitButton.id = `${device.id}-button`
+          submitButton.addEventListener('click', updateStatusData)
           submitButton.innerText = 'Update'
           submitCell.appendChild(submitButton)
         }

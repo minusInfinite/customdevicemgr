@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const config = require('./src/config.json');
 
@@ -13,13 +13,13 @@ const transform = function (content, path) {
   const { name } = config;
 
   for (let i = 0; i < len; i++) {
-    
+
     config.items[i].url = `${name}/` + config.items[i].url;
-    
-    
-    
+
+
+
     config.items[i].icon = `${name}/` + config.items[i].icon;
-    
+
   }
 
   delete config['dev'];
@@ -30,7 +30,7 @@ const transform = function (content, path) {
 
 const jsFileName = () => {
   let fileName = '[name]-[contenthash].js'
-  
+
   return fileName
 }
 
@@ -70,7 +70,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader", "postcss-loader",
+          'css-loader', 'postcss-loader',
         ]
       },
       {
@@ -79,9 +79,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            
+
             presets: ['@babel/preset-env']
-            
+
           }
         }
       },
@@ -93,12 +93,12 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.css",
-      chunkFilename: "styles.css"
+      filename: 'styles.css',
+      chunkFilename: 'styles.css'
     }),
     new HtmlWebpackPlugin({
       title: 'customdevicemgr',
-      filename: `customdevicemgr.html`,
+      filename: 'customdevicemgr.html',
       template: 'src/app/customdevicemgr.html',
       inject: 'body'
     }),

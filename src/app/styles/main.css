@@ -1,3 +1,11 @@
 .hidden {
     display: none;
 }
+
+#customdevicemgr {
+    height: 100%;
+}
+
+#customdevicemgr section {
+    height: 80vh;
+}

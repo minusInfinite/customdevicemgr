@@ -16,7 +16,7 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
   let elNotice
 
   /** @type {Element} message */
-  let errorHandler = message => {
+  let noticeHandeler = message => {
     elNotice.innerText = message
   }
 
@@ -32,8 +32,34 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
     }
   }
 
-  /** @type {EventListener} */
-  let updateStatusData = () => {
+  /** @param {Event} e */
+  const updateStatusData = (e) => {
+
+    /** @type {HTMLButtonElement} */
+    const el = e.target
+    const deviceId = el.id.split('-')[0]
+    const deviceName = elAddin.querySelector(`#${deviceId}-name`)
+    const odoInput = elAddin.querySelector(`#${deviceId}-odo`)
+    const ehInput = elAddin.querySelector(`#${deviceId}-eh`)
+    const emInput = elAddin.querySelector(`#${deviceId}-em`)
+    const ehContainer = elAddin.querySelector(`#${deviceId}-es`)
+    const currentOdo = odoInput.dataset.currentOdo
+    const currentSeconds = ehContainer.dataset.currentSec
+    const odoValueConvert = odoInput.value * 1000
+    const ehValueConvert = 3600 * (ehInput.valueAsNumber + emInput.value / 60)
+
+    console.log(currentOdo, currentSeconds)
+    console.log('----')
+    console.log(odoInput.value, ehInput.value, emInput.value, 3600 * (ehInput.valueAsNumber + emInput.value / 60))
+    console.log(odoValueConvert, ehValueConvert)
+
+    if (Math.round(currentOdo) === odoValueConvert && Math.round(currentSeconds) === ehValueConvert) {
+      console.log(elNotice)
+      noticeHandeler(`${deviceName.innerText} odometer and engine hours not updated`)
+      return;
+    } else {
+      noticeHandeler(`${deviceName.innerText} - Odo: ${odoValueConvert} EngineHours: ${ehValueConvert}`)
+    }
 
   }
 
@@ -65,13 +91,25 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
           'toDate': nowISO
         }
 
+      }], ['Get', {
+        typeName: 'StatusData',
+        search: {
+          'deviceSearch': {
+            'id': deviceId
+          },
+          'diagnosticSearch': {
+            'id': 'DiagnosticAux8Id'
+          },
+          'fromDate': nowISO,
+          'toDate': nowISO
+        }
+
       }]], function (result) {
-        let ehData = result[0][0].data ? result[0][0].data : 0,
-          odoData = result[1][0].data ? result[1][0].data : 0;
+        let esData = result[0][0].data ? result[0][0].data : 0,
+          odoData = result[1][0].data ? result[1][0].data : 0,
+          battData = result[2][0].data ? result[1][0].data : 0;
 
-
-
-        resolve({ engineHours: ehData, odometer: odoData })
+        resolve({ engineSeconds: esData, odometer: odoData, battery: !!+battData })
       }, reject)
     })
   }
@@ -95,7 +133,7 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
       api = freshApi;
 
       elDeviceTableBody = document.querySelector('.customdevicemgr-table__body')
-      elNotice = elAddin.querySelector(`${appName}-notice`)
+      elNotice = elAddin.querySelector('#customdevicemgr-notice')
 
       // Loading translations if available
       if (freshState.translate) {
@@ -151,14 +189,21 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
           let assetCell = newRow.insertCell()
           let snCell = newRow.insertCell()
           let snContent = document.createElement('div')
+          let battCell = newRow.insertCell()
+          let battContent = document.createElement('div')
           let odoCell = newRow.insertCell()
           let odoContent = document.createElement('input')
           let ehCell = newRow.insertCell()
+          let ehContainer = document.createElement('div')
           let ehContent = document.createElement('input')
+          let emContent = document.createElement('input')
           let submitCell = newRow.insertCell()
           let submitButton = document.createElement('button')
 
-          const { engineHours, odometer } = await getStatusData(device.id)
+          const { engineSeconds, odometer, battery } = await getStatusData(device.id)
+
+          let engineHours = Math.round(engineSeconds / 3600)
+          let engineMinutes = (m => Math.round(60 * m))(Math.abs(engineSeconds / 3600 - engineHours))
 
           if (i === 0) {
             newRow.dataset.rowId = device.id
@@ -172,25 +217,41 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
           }
 
           assetCell.classList.add('entities-list__row-cell', 'entities-list__row-cell--first', 'inventory-main-column__name', 'ellipsis')
+          assetCell.id = `${device.id}-name`
           assetCell.innerText = device.name
           snCell.classList.add('entities-list__row-cell', 'ellipsis')
           snContent.classList.add('list-column-text')
           snContent.innerText = device.serialNumber
           snCell.appendChild(snContent)
+          battCell.classList.add('entities-list__row-cell', 'ellipsis')
+          battContent.classList.add('list-column-text')
+          battContent.innerText = battery ? 'Low' : 'Good'
+          battCell.appendChild(battContent)
           odoCell.classList.add('entities-list__row-cell', 'ellipsis')
           odoContent.classList.add('list-column-numeric', 'geotabFormEditField')
           odoContent.dataset.currentOdo = `${odometer}`
           odoContent.id = `${device.id}-odo`
           odoContent.type = 'number'
-          odoContent.value = Math.ceil(odometer / 1000)
+          odoContent.step = 0.01
+          odoContent.value = (o => Math.round(o / 1e3))(odometer);
           odoCell.appendChild(odoContent)
           ehCell.classList.add('entities-list__row-cell', 'ellipsis')
-          ehContent.classList.add('list-column-numeric', 'geotabFormEditField')
+          ehContent.classList.add('geotabFormEditField')
           ehContent.id = `${device.id}-eh`
-          ehContent.dataset.currentHours = `${engineHours}`
           ehContent.type = 'number'
-          ehContent.value = Math.floor(engineHours / 60 / 60)
-          ehCell.appendChild(ehContent)
+          ehContent.step = 1
+          ehContent.value = engineHours
+          emContent.classList.add('geotabFormEditField')
+          emContent.id = `${device.id}-em`
+          emContent.type = 'number'
+          emContent.step = 1
+          emContent.value = engineMinutes
+          ehContainer.classList.add('list-column-numeric')
+          ehContainer.id = `${device.id}-es`
+          ehContainer.dataset.currentSec = `${engineSeconds}`
+          ehContainer.appendChild(ehContent)
+          ehContainer.appendChild(emContent)
+          ehCell.appendChild(ehContainer)
           submitCell.classList.add('entities-list__row-cell', 'entities-list__row-cell--last', 'ellipsis')
           submitButton.classList.add('geo-button', 'geo-button--action')
           submitButton.id = `${device.id}-button`

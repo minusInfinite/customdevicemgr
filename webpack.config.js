@@ -14,11 +14,11 @@ const transform = function (content, path) {
 
   for (let i = 0; i < len; i++) {
 
-    config.items[i].url = `${name}/` + config.items[i].url;
+    config.items[i].url = `${host}/` + config.items[i].url;
 
 
 
-    config.items[i].icon = `${name}/` + config.items[i].icon;
+    config.items[i].icon = `${host}/` + config.items[i].icon;
 
   }
 

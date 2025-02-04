@@ -1,7 +1,7 @@
 {
   "name": "customdevicemgr",
   "supportEmail": "helpdesk@fleetcomplete.com.au",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "items": [
     {
       "url": "customdevicemgr.html",
@@ -16,7 +16,7 @@
   "dev": {
     "root": "customdevicemgr",
     "dist": {
-      "host": "https://www.example.com/myaddin/"
+      "host": "https://cdn.jsdelivr.net/gh/minusInfinite/customdevicemgr@main/dist"
     }
   }
 }

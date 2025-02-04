@@ -34,6 +34,9 @@ geotab.addin.customdevicemgr = function () {
     let p = document.createElement('p')
     p.innerText = text
     elNotice.appendChild(p)
+    setTimeout(() => {
+      elNotice.removeChild(p)
+    }, 1000 * 15)
   }
 
   let progressHandeler = (value) => {

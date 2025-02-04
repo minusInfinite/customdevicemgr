@@ -1,8 +1,8 @@
 .hidden {
-    display: none;
+    opacity: 0;
 }
 
-#customdevicemgr {
+#customdevicemgr__content {
     --alert-success-color: #1c7700;
     --alert-success-bg: #ceffd8;
     --alert-border-rad: 5px;
@@ -11,7 +11,11 @@
     height: 100%;
 }
 
-#customdevicemgr section {
+#customdevicemgr__content header {
+    padding: 0 1em;
+}
+
+#customdevicemgr__content section {
     height: 80vh;
 }
 

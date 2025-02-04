@@ -3,9 +3,53 @@
 }
 
 #customdevicemgr {
+    --alert-success-color: #1c7700;
+    --alert-success-bg: #ceffd8;
+    --alert-border-rad: 5px;
+    --alert-warning-color: #910a01;
+    --alert-warning-bg: #facac7;
     height: 100%;
 }
 
 #customdevicemgr section {
     height: 80vh;
+}
+
+#customdevicemgr-notice {
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    border-radius: var(--alert-border-rad);
+    width: 100%;
+}
+
+#customdevicemgr-notice[data-alert='error'] {
+    color: var(--alert-warning-color);
+    background-color: var(--alert-warning-bg);
+}
+
+#customdevicemgr-notice[data-alert='success'] {
+    color: var(--alert-success-color);
+    background-color: var(--alert-success-color);
+
+}
+
+.batteryStatus {
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 35%;
+}
+
+.batteryStatus[data-status='low'] {
+    color: var(--alert-warning-color);
+    background-color: var(--alert-warning-bg);
+}
+
+.batteryStatus[data-status='good'] {
+    color: var(--alert-success-color);
+    background-color: var(--alert-success-bg);
+}
+
+.batteryStatus p {
+    margin: 1px;
 }

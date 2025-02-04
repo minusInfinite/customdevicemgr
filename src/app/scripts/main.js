@@ -1,13 +1,18 @@
-const logger = require('./utils/logger.js')
 /**
  * @returns {{initialize: Function, focus: Function, blur: Function, startup; Function, shutdown: Function}}
  */
-geotab.addin.customdevicemgr = function (api, state, meta) {
+geotab.addin.customdevicemgr = function () {
+
+  /**@type {GeotabApi} api */
+  let api
+  let state
+  let meta
   'use strict';
   const appName = 'customdevicemgr';
   const addinId = 'ajliNjUxOGEtZWQzMC1lOWF';
 
-
+  /**@type {HTMLDivElement} */
+  let elAddin
 
   /**@type {HTMLTableSectionElement}*/
   let elDeviceTableBody
@@ -15,9 +20,15 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
   /**@type {HTMLDivElement} */
   let elNotice
 
-  /** @type {Element} message */
-  let noticeHandeler = message => {
-    elNotice.innerText = message
+  /**
+   * 
+   * @param {Object{boolean,string}} param0 
+   */
+  let noticeHandeler = ({ result, text }) => {
+    elNotice.dataset.alert = !!result ? 'success' : 'error'
+    let p = document.createElement('p')
+    p.innerText = text
+    elNotice.appendChild(p)
   }
 
   let sortNameEntities = (a, b) => {
@@ -32,35 +43,110 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
     }
   }
 
+  /**
+   * Save Device odometer 
+   * @param {number} o odometer in meters
+   * @param {string} d device id
+   * @returns {Promise<boolean>}
+   */
+  function saveOdo(o, d) {
+    return new Promise((resolve, reject) => {
+      api.call('Add', {
+        typeName: 'StatusData',
+        entity: {
+          data: o,
+          dateTime: (new Date).toISOString(),
+          device: {
+            id: d
+          },
+          diagnostic: {
+            id: 'DiagnosticOdometerAdjustmentId'
+          }
+        }
+      }, function (r) {
+        resolve(!(!!r))
+      }, function (err) {
+        reject(err)
+      })
+    })
+  }
+
+  /**
+   * Save Device Engine Hours
+   * @param {number} s engine hours in seconds
+   * @param {string} d device id
+   * @returns {Promise<boolean>}
+   */
+  function saveEh(s, d) {
+    return new Promise((resolve, reject) => {
+      api.call('Add', {
+        typeName: 'StatusData',
+        entity: {
+          data: s,
+          dateTime: (new Date).toISOString(),
+          device: {
+            id: d
+          },
+          diagnostic: {
+            id: 'DiagnosticEngineHoursAdjustmentId'
+          }
+        }
+      }, function (r) {
+        resolve(!(!!r))
+      }, function (err) {
+        reject(err)
+      })
+    })
+  }
+
+  // data math utilities
+  const parseOdometer = (o) => Math.round(Math.round(o / 1e3));
+  const parseEngineHours = (s) => Math.round(s / 3600);
+  const parseEngineMinutes = (s, h) => (m => Math.round(60 * m))(Math.abs(s / 3600 - h));
+  const parseEngineSecs = (h, m) => 3600 * (h + m / 60);
+
   /** @param {Event} e */
   const updateStatusData = (e) => {
+    let alertText
 
     /** @type {HTMLButtonElement} */
     const el = e.target
     const deviceId = el.id.split('-')[0]
-    const deviceName = elAddin.querySelector(`#${deviceId}-name`)
+    const deviceName = elAddin.querySelector(`#${deviceId}-name`).innerText
     const odoInput = elAddin.querySelector(`#${deviceId}-odo`)
     const ehInput = elAddin.querySelector(`#${deviceId}-eh`)
     const emInput = elAddin.querySelector(`#${deviceId}-em`)
     const ehContainer = elAddin.querySelector(`#${deviceId}-es`)
-    const currentOdo = odoInput.dataset.currentOdo
-    const currentSeconds = ehContainer.dataset.currentSec
-    const odoValueConvert = odoInput.value * 1000
-    const ehValueConvert = 3600 * (ehInput.valueAsNumber + emInput.value / 60)
+    const initOdo = parseOdometer(odoInput.dataset.currentOdo)
+    const initSeconds = parseFloat(ehContainer.dataset.currentSec)
+    const currentHours = parseEngineHours(initSeconds)
+    const currentMin = parseEngineMinutes(initSeconds, currentHours)
+    const currentSeconds = parseEngineSecs(currentHours, currentMin)
+    const odoValueConvert = odoInput.value * 1e3
+    const ehValueConvert = parseEngineSecs(ehInput.valueAsNumber, emInput.valueAsNumber)
 
-    console.log(currentOdo, currentSeconds)
-    console.log('----')
-    console.log(odoInput.value, ehInput.value, emInput.value, 3600 * (ehInput.valueAsNumber + emInput.value / 60))
-    console.log(odoValueConvert, ehValueConvert)
-
-    if (Math.round(currentOdo) === odoValueConvert && Math.round(currentSeconds) === ehValueConvert) {
-      console.log(elNotice)
-      noticeHandeler(`${deviceName.innerText} odometer and engine hours not updated`)
+    if (currentSeconds === ehValueConvert && initOdo === odoInput.valueAsNumber) {
+      alertText = `${deviceName} odometer and engine hours not updated`
+      noticeHandeler({ result: false, text: alertText })
       return;
-    } else {
-      noticeHandeler(`${deviceName.innerText} - Odo: ${odoValueConvert} EngineHours: ${ehValueConvert}`)
     }
 
+    if (initOdo !== odoInput.valueAsNumber) {
+      saveOdo(odoValueConvert, deviceId)
+        .then(() => {
+          alertText = `Updated Odometer for ${deviceName} to ${odoInput.value}`
+          noticeHandeler({ result: true, text: alertText })
+        }).catch(e => {
+          alertText = `Error updating Odometer for ${deviceName}: ${e}`
+          noticeHandeler({ result: false, text: alertText })
+        });
+    }
+
+    if (currentSeconds !== ehValueConvert) {
+      saveEh(ehValueConvert, deviceId).then(() => {
+        noticeHandeler({ result: true, text: `Updated Engine Hours for ${deviceName} to ${ehInput.value}:${emInput.value}` })
+      }).catch(e => noticeHandeler({ result: false, text: `Error updating Engine Hours for ${deviceName}: ${e}` }));
+    }
   }
 
   let getStatusData = async (deviceId) => {
@@ -105,17 +191,22 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
         }
 
       }]], function (result) {
-        let esData = result[0][0].data ? result[0][0].data : 0,
-          odoData = result[1][0].data ? result[1][0].data : 0,
-          battData = result[2][0].data ? result[1][0].data : 0;
+        let esData = result[0][0].data ? result[0][0].data : 0
+        let odoData = result[1][0].data ? result[1][0].data : 0
+        let battData = result[2][0].data ? result[2][0].data : 0
+        let battDate = result[2][0].dateTime ? result[2][0].dateTime : 0
 
-        resolve({ engineSeconds: esData, odometer: odoData, battery: !!+battData })
-      }, reject)
+
+
+        resolve({ engineSeconds: esData, odometer: odoData, battery: !!+battData, batteryDate: battDate })
+      }, function (error) {
+        reject(error)
+      })
     })
   }
 
   // the root container
-  var elAddin = document.getElementById(appName);
+  elAddin = document.getElementById(appName);
 
   return {
 
@@ -161,15 +252,11 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
       // getting the current user to display in the UI
 
       // getting the current user to display in the UI
-      freshApi.getSession(session => {
-        elAddin.querySelector('#customdevicemgr-user').textContent = session.userName;
-      });
-
 
       // show main content
       freshApi.call('Get', {
         typeName: 'Device',
-        resultsLimit: 10,
+        resultsLimit: 40,
         search: {
           fromDate: new Date().toISOString(),
           groups: freshState.getGroupFilter(),
@@ -200,10 +287,10 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
           let submitCell = newRow.insertCell()
           let submitButton = document.createElement('button')
 
-          const { engineSeconds, odometer, battery } = await getStatusData(device.id)
+          const { engineSeconds, odometer, battery, batteryDate } = await getStatusData(device.id)
 
-          let engineHours = Math.round(engineSeconds / 3600)
-          let engineMinutes = (m => Math.round(60 * m))(Math.abs(engineSeconds / 3600 - engineHours))
+          let engineHours = parseEngineHours(engineSeconds)
+          let engineMinutes = parseEngineMinutes(engineSeconds, engineHours)
 
           if (i === 0) {
             newRow.dataset.rowId = device.id
@@ -224,15 +311,17 @@ geotab.addin.customdevicemgr = function (api, state, meta) {
           snContent.innerText = device.serialNumber
           snCell.appendChild(snContent)
           battCell.classList.add('entities-list__row-cell', 'ellipsis')
-          battContent.classList.add('list-column-text')
-          battContent.innerText = battery ? 'Low' : 'Good'
+          battContent.classList.add('list-column-text', 'batteryStatus')
+          battContent.title = new Date(Date.parse(batteryDate))
+          battContent.dataset.status = battery ? 'low' : 'good'
+          battContent.innerHTML = `<p>${battery ? 'Low' : 'Good'}</p>`
           battCell.appendChild(battContent)
           odoCell.classList.add('entities-list__row-cell', 'ellipsis')
           odoContent.classList.add('list-column-numeric', 'geotabFormEditField')
           odoContent.dataset.currentOdo = `${odometer}`
           odoContent.id = `${device.id}-odo`
           odoContent.type = 'number'
-          odoContent.step = 0.01
+          odoContent.step = 1
           odoContent.value = (o => Math.round(o / 1e3))(odometer);
           odoCell.appendChild(odoContent)
           ehCell.classList.add('entities-list__row-cell', 'ellipsis')

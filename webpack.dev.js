@@ -24,7 +24,7 @@ module.exports = {
     historyApiFallback: true,
     devMiddleware: {
       mimeTypes: {
-        'text/css': ['css']
+        'css': 'text/css'
       }
     }
   },

@@ -2,19 +2,17 @@
   "name": "customdevicemgr",
   "supportEmail": "helpdesk@fleetcomplete.com.au",
   "version": "0.0.1",
-  "items": [{
-    
-    
-    "url": "customdevicemgr.html",
-    "path": "EngineMaintenanceLink/",
-    "menuName": {
-      "en": "Custom Device Manager"
-    },
-    
-    "icon": "images/icon.svg"
-  }],
-  
-  
+  "items": [
+    {
+      "url": "customdevicemgr.html",
+      "path": "EngineMaintenanceLink/",
+      "menuName": {
+        "en": "Custom Device Manager"
+      },
+      "category": "MaintenanceId",
+      "icon": "images/icon.svg"
+    }
+  ],
   "dev": {
     "root": "customdevicemgr",
     "dist": {

@@ -4,13 +4,13 @@
   "version": "0.1.1",
   "items": [
     {
-      "url": "https://cdn.jsdelivr.net/gh/minusInfinite/customdevicemgr@main/dist/customdevicemgr.html",
+      "url": "https://cdn.jsdelivr.net/gh/minusInfinite/customdevicemgr@master/dist/customdevicemgr.html",
       "path": "EngineMaintenanceLink/",
       "menuName": {
         "en": "Custom Device Manager"
       },
       "category": "MaintenanceId",
-      "icon": "https://cdn.jsdelivr.net/gh/minusInfinite/customdevicemgr@main/dist/images/customdevice.svg"
+      "icon": "https://cdn.jsdelivr.net/gh/minusInfinite/customdevicemgr@master/dist/images/customdevice.svg"
     }
   ]
 }

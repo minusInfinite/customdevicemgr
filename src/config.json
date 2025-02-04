@@ -16,7 +16,7 @@
   "dev": {
     "root": "customdevicemgr",
     "dist": {
-      "host": "https://cdn.jsdelivr.net/gh/minusInfinite/customdevicemgr@main/dist"
+      "host": "https://cdn.jsdelivr.net/gh/minusInfinite/customdevicemgr@master/dist"
     }
   }
 }

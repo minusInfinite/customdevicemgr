@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32px" height="32px">
+  <rect style="stroke-miterlimit: 3.98; stroke: rgb(61, 151, 208); paint-order: stroke; fill: rgb(16, 16, 189);" x="5" y="3" width="22" height="26" rx="5" ry="5" />
+  <rect style="stroke-miterlimit: 3.98; stroke: rgb(61, 151, 208); paint-order: stroke; fill: rgb(143, 195, 232);" x="8" y="5" width="16" height="22" rx="3" ry="3" />
+  <ellipse style="stroke: rgb(16, 16, 189); fill: rgb(143, 195, 232); paint-order: stroke;" cx="6" cy="11" rx="2" ry="2" />
+  <ellipse style="stroke: rgb(16, 16, 189); fill: rgb(143, 195, 232); paint-order: stroke;" cx="26" cy="11" rx="2" ry="2" />
+  <ellipse style="stroke: rgb(16, 16, 189); fill: rgb(143, 195, 232); paint-order: stroke;" cx="26" cy="20" rx="2" ry="2" />
+  <ellipse style="stroke: rgb(16, 16, 189); fill: rgb(143, 195, 232); paint-order: stroke;" cx="6" cy="20" rx="2" ry="2" />
+</svg>

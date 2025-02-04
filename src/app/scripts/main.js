@@ -5,8 +5,7 @@ geotab.addin.customdevicemgr = function () {
 
   /**@type {GeotabApi} api */
   let api
-  let state
-  let meta
+
   'use strict';
   const appName = 'customdevicemgr';
   const addinId = 'ajliNjUxOGEtZWQzMC1lOWF';
@@ -14,11 +13,17 @@ geotab.addin.customdevicemgr = function () {
   /**@type {HTMLDivElement} */
   let elAddin
 
+  /**@type {HTMLTableElement} */
+  let elDeviceTable
+
   /**@type {HTMLTableSectionElement}*/
   let elDeviceTableBody
 
   /**@type {HTMLDivElement} */
   let elNotice
+
+  /**@type {HTMLProgressElement} */
+  let elProgress
 
   /**
    * 
@@ -29,6 +34,11 @@ geotab.addin.customdevicemgr = function () {
     let p = document.createElement('p')
     p.innerText = text
     elNotice.appendChild(p)
+  }
+
+  let progressHandeler = (value) => {
+    elProgress.value = value.toString()
+    elProgress.innerText = `${value} %`
   }
 
   let sortNameEntities = (a, b) => {
@@ -208,6 +218,7 @@ geotab.addin.customdevicemgr = function () {
   // the root container
   elAddin = document.getElementById(appName);
 
+
   return {
 
     /**
@@ -223,8 +234,9 @@ geotab.addin.customdevicemgr = function () {
     initialize: function (freshApi, freshState, initializeCallback) {
       api = freshApi;
 
+      elDeviceTable = document.querySelector('.customdevicemgr-table')
       elDeviceTableBody = document.querySelector('.customdevicemgr-table__body')
-      elNotice = elAddin.querySelector('#customdevicemgr-notice')
+      elNotice = document.querySelector('#customdevicemgr-notice')
 
       // Loading translations if available
       if (freshState.translate) {
@@ -249,28 +261,32 @@ geotab.addin.customdevicemgr = function () {
     */
     focus: function (freshApi, freshState) {
       elAddin.style.display = 'initial';
-      // getting the current user to display in the UI
-
-      // getting the current user to display in the UI
+      elProgress = document.createElement('progress')
 
       // show main content
       freshApi.call('Get', {
         typeName: 'Device',
-        resultsLimit: 40,
+        resultsLimit: 50,
         search: {
           fromDate: new Date().toISOString(),
           groups: freshState.getGroupFilter(),
           deviceType: 'CustomDevice'
-        },
+        }
       }, async (devices) => {
         if (!devices || devices.length < 1) {
           return;
         }
 
         devices.sort(sortNameEntities)
+        elProgress.max = '100'
 
+        elNotice.appendChild(elProgress)
 
         for (let i = 0; i < devices.length; i++) {
+
+          elProgress.dataset.loading = 'progress'
+          progressHandeler(Math.round((i / devices.length) * 100))
+
           let device = devices[i]
           const newRow = elDeviceTableBody.insertRow()
           let assetCell = newRow.insertCell()
@@ -312,7 +328,7 @@ geotab.addin.customdevicemgr = function () {
           snCell.appendChild(snContent)
           battCell.classList.add('entities-list__row-cell', 'ellipsis')
           battContent.classList.add('list-column-text', 'batteryStatus')
-          battContent.title = new Date(Date.parse(batteryDate))
+          battContent.title = new Date(Date.parse(batteryDate)).toLocaleString()
           battContent.dataset.status = battery ? 'low' : 'good'
           battContent.innerHTML = `<p>${battery ? 'Low' : 'Good'}</p>`
           battCell.appendChild(battContent)
@@ -348,6 +364,9 @@ geotab.addin.customdevicemgr = function () {
           submitButton.innerText = 'Update'
           submitCell.appendChild(submitButton)
         }
+
+        elNotice.removeChild(elProgress)
+        elDeviceTable.style.cssText = ''
       })
     },
 

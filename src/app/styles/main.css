@@ -19,18 +19,19 @@
     display: flex;
     justify-content: center;
     font-size: large;
-    border-radius: var(--alert-border-rad);
     width: 100%;
 }
 
 #customdevicemgr-notice[data-alert='error'] {
     color: var(--alert-warning-color);
     background-color: var(--alert-warning-bg);
+    border-radius: var(--alert-border-rad);
 }
 
 #customdevicemgr-notice[data-alert='success'] {
     color: var(--alert-success-color);
     background-color: var(--alert-success-color);
+    border-radius: var(--alert-border-rad);
 
 }
 

@@ -10,7 +10,7 @@
         "en": "Custom Device Manager"
       },
       "category": "MaintenanceId",
-      "icon": "images/icon.svg"
+      "icon": "images/customdevice.svg"
     }
   ],
   "dev": {

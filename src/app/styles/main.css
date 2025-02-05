@@ -51,12 +51,20 @@
     margin: 0 8px;
 }
 
+#customdevicemgr__content .entities-list-actions {
+    justify-content: end;
+}
+
 #customdevicemgr__content header {
     padding: 0 1em;
 }
 
 #customdevicemgr__content section {
     height: 80vh;
+}
+
+#customdevicemgr__content .svgSprite {
+    display: none;
 }
 
 .hidden {

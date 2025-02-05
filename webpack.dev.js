@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -15,7 +16,8 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist')
+      directory: path.resolve(__dirname, 'dist'),
+      publicPath: '/images'
     },
     port: 3000,
     open: true,
@@ -79,6 +81,11 @@ module.exports = {
       filename: 'style-guide.html',
       template: 'src/.dev/styles/styleGuideMyGeotab.html',
       inject: false
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/app/images', to: 'images/' }
+      ]
     })
   ]
 }

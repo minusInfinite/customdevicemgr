@@ -13,5 +13,4 @@ if (!geotab.addin.customdevicemgr) {
     require('./scripts/utils/logger.js');
 
 }
-
 require('./styles/main.css');

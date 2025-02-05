@@ -302,7 +302,9 @@ geotab.addin.customdevicemgr = function () {
           let ehCell = newRow.insertCell()
           let ehContainer = document.createElement('div')
           let ehContent = document.createElement('input')
+          let ehspan = document.createElement('span')
           let emContent = document.createElement('input')
+          let emspan = document.createElement('span')
           let submitCell = newRow.insertCell()
           let submitButton = document.createElement('button')
 
@@ -336,7 +338,7 @@ geotab.addin.customdevicemgr = function () {
           battContent.innerHTML = `<p>${battery ? 'Low' : 'Good'}</p>`
           battCell.appendChild(battContent)
           odoCell.classList.add('entities-list__row-cell', 'ellipsis')
-          odoContent.classList.add('list-column-numeric', 'geotabFormEditField')
+          odoContent.classList.add('list-column-numeric', 'geotabFormEditField', 'odometer-control__field-units')
           odoContent.dataset.currentOdo = `${odometer}`
           odoContent.id = `${device.id}-odo`
           odoContent.type = 'number'
@@ -344,21 +346,27 @@ geotab.addin.customdevicemgr = function () {
           odoContent.value = (o => Math.round(o / 1e3))(odometer);
           odoCell.appendChild(odoContent)
           ehCell.classList.add('entities-list__row-cell', 'ellipsis')
-          ehContent.classList.add('geotabFormEditField')
+          ehContent.classList.add('engine-hours-control__field', 'engine-hours-control__hours', 'zenith-input', 'zenith-input--minimized', 'zenith-input-number')
           ehContent.id = `${device.id}-eh`
           ehContent.type = 'number'
           ehContent.step = 1
           ehContent.value = engineHours
-          emContent.classList.add('geotabFormEditField')
+          ehspan.classList.add('geo-form__description-text', 'zenith-form__field-units', 'zenith-form__field-units--capitalized')
+          ehspan.innerText = 'hr'
+          emContent.classList.add('engine-hours-control__field', 'engine-hours-control__minutes', 'zenith-input', 'zenith-input--minimized', 'zenith-input-number')
           emContent.id = `${device.id}-em`
           emContent.type = 'number'
           emContent.step = 1
           emContent.value = engineMinutes
+          emspan.classList.add('geo-form__description-text', 'zenith-form__field-units', 'zenith-form__field-units--capitalized')
+          emspan.innerText = 'min'
           ehContainer.classList.add('list-column-numeric')
           ehContainer.id = `${device.id}-es`
           ehContainer.dataset.currentSec = `${engineSeconds}`
           ehContainer.appendChild(ehContent)
+          ehContainer.appendChild(ehspan)
           ehContainer.appendChild(emContent)
+          ehContainer.appendChild(emspan)
           ehCell.appendChild(ehContainer)
           submitCell.classList.add('entities-list__row-cell', 'entities-list__row-cell--last', 'ellipsis')
           submitButton.classList.add('geo-button', 'geo-button--action')

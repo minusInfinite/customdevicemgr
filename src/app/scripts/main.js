@@ -26,6 +26,9 @@ geotab.addin.customdevicemgr = function () {
     /**@type {HTMLProgressElement} */
     let elProgress
 
+    /**@type {HTMLDivElement} */
+    let elDeviceCount
+
     /**@type {HTMLButtonElement} */
     let elPrev
 
@@ -91,7 +94,7 @@ geotab.addin.customdevicemgr = function () {
                         lastId: lastId
                     },
                     propertySelector: {
-                        fields: ['name', 'id'],
+                        fields: ['name', 'id', 'serialNumber'],
                         isIncluded: true
                     }
                 }, function (devices) {
@@ -301,8 +304,9 @@ geotab.addin.customdevicemgr = function () {
             elDeviceTableBody = document.querySelector('.customdevicemgr-table__body')
             elNotice = document.querySelector('#customdevicemgr-notice')
             elProgress = document.createElement('progress')
-            elPrev = document.querySelector('list-pagination__previous')
-            elNext = document.querySelector('list-pagination__next')
+            elDeviceCount = document.querySelector('.list-pagination__stats')
+            elPrev = document.querySelector('.list-pagination__previous')
+            elNext = document.querySelector('.list-pagination__next')
 
             // Loading translations if available
             if (freshState.translate) {
@@ -333,9 +337,7 @@ geotab.addin.customdevicemgr = function () {
             let devices = []
             let storedDevices = []
 
-
             elAddin.style.display = 'initial';
-
 
             (async () => {
                 try {
@@ -343,9 +345,21 @@ geotab.addin.customdevicemgr = function () {
                     elProgress.max = '100'
 
                     storedDevices = await getCustomDevices()
-                    devices = storedDevices.slice(0, deviceNext)
+                    devices = storedDevices.slice(deviceIndex, (deviceNext + deviceIndex))
 
-                    console.log(devices)
+                    elDeviceCount.innerText = `${deviceIndex + 1}-${devices.length} of ${storedDevices.length}`
+
+                    elPrev.addEventListener('click', () => {
+                        if (deviceIndex === 0) {
+                            return
+                        }
+                    })
+
+                    elNext.addEventListener('click', () => {
+                        if (deviceNext >= storedDevices.length) {
+                            return
+                        }
+                    })
 
                     elNotice.appendChild(elProgress)
 
@@ -440,10 +454,11 @@ geotab.addin.customdevicemgr = function () {
                         submitCell.appendChild(submitButton)
                     }
 
-                    elNotice.removeChild(elProgress)
-                    elDeviceTable.style.cssText = ''
                 } catch (e) {
                     console.error('Error with Addin', { cause: e })
+                } finally {
+                    elNotice.removeChild(elProgress)
+                    elDeviceTable.style.cssText = ''
                 }
             })();
         },

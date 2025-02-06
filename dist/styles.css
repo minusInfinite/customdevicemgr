@@ -22,9 +22,14 @@
 
 #customdevicemgr__content #customdevicemgr-notice[data-alert='success'] {
     color: var(--alert-success-color);
-    background-color: var(--alert-success-color);
+    background-color: var(--alert-success-bg);
     border-radius: var(--alert-border-rad);
 
+}
+
+#customdevicemgr__content .entities-list-actions datalist {
+    height: 5em;
+    overflow: hidden;
 }
 
 #customdevicemgr__content .batteryStatus {
@@ -51,12 +56,20 @@
     margin: 0 8px;
 }
 
+#customdevicemgr__content .entities-list-actions {
+    justify-content: space-between;
+}
+
 #customdevicemgr__content header {
     padding: 0 1em;
 }
 
 #customdevicemgr__content section {
     height: 80vh;
+}
+
+#customdevicemgr__content .svgSprite {
+    display: none;
 }
 
 .hidden {

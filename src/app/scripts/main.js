@@ -98,7 +98,7 @@ geotab.addin.customdevicemgr = function () {
       const nowISO = (new Date).toISOString()
       let offset = null
       let lastId = null
-      let userGroups = state?.getAdvancedGroupsFilter()
+      let userGroups = state?.getAdvancedGroupFilter()
 
       function fetchPage() {
         api.call('Get', {

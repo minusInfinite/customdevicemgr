@@ -38,7 +38,7 @@ const state = {
     getGroupFilter: function () {
         return this._activeGroups;
     },
-    getAdvancedGroupsFilter: function () {
+    getAdvancedGroupFilter: function () {
         return this._advancedGroupsFilter;
     }
 };

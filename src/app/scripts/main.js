@@ -106,7 +106,7 @@ geotab.addin.customdevicemgr = function () {
           resultsLimit: resultsLimit,
           search: {
             fromDate: nowISO,
-            groupFilterCondition: Object.keys(userGroups).length === 0 ? undefined : userGroups,
+            groupFilterCondition: Object.keys(userGroups).length === 0 ? undefined : userGroups.groupFilterConditions.length === 1 ? userGroups.groupFilterConditions[0] : userGroups,
             deviceType: 'CustomDevice'
           },
           sort: {

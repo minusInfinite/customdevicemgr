@@ -309,7 +309,7 @@ geotab.addin.customdevicemgr = function () {
       elDeviceTableBody.style.cssText = 'opacity: 0;'
       elNotice.appendChild(elProgress)
 
-      if (elDeviceTableBody.rows.length === nextIndex || elDeviceTableBody.rows.length == 1) {
+      if (elDeviceTableBody.rows.length === nextIndex || elDeviceTableBody.rows.length > deviceIndex || elDeviceTableBody.rows.length == 1) {
         for (let i = elDeviceTableBody.rows.length; i !== 0; i--) {
           elDeviceTableBody.deleteRow(-1)
         }
@@ -367,7 +367,7 @@ geotab.addin.customdevicemgr = function () {
         snCell.appendChild(snContent)
         battCell.classList.add('entities-list__row-cell', 'ellipsis')
         battContent.classList.add('list-column-text', 'batteryStatus')
-        battContent.title = new Date(Date.parse(batteryDate)).toLocaleString()
+        battContent.title = `Since: ${new Date(Date.parse(batteryDate)).toLocaleString()}`
         battContent.dataset.status = battery ? 'low' : 'good'
         battContent.innerHTML = `<p>${battery ? 'Low' : 'Good'}</p>`
         battCell.appendChild(battContent)

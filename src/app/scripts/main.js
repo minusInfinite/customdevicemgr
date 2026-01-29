@@ -249,7 +249,6 @@ geotab.addin.customdevicemgr = function () {
   }
 
   let getStatusData = async (deviceId) => {
-    const nowISO = new Date().toISOString()
     return new Promise((resolve, reject) => {
       api.call('Get', {
         'typeName': 'DeviceStatusInfo',

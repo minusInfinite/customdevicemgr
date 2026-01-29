@@ -1,7 +1,7 @@
 const state = {
     // Not available in myGeotab - addin use only.
     _activeGroups: [],
-    _advancedGroupsFilter: {},
+    _advancedGroupFilter: {},
     getState: function () {
         var hash = location.hash,
             hashLength = hash.length;

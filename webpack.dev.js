@@ -19,7 +19,7 @@ module.exports = {
       directory: path.resolve(__dirname, 'dist'),
       publicPath: '/images'
     },
-    port: 3000,
+    port: 3100,
     open: true,
     hot: true,
     compress: true,

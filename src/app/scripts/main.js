@@ -251,51 +251,26 @@ geotab.addin.customdevicemgr = function () {
   let getStatusData = async (deviceId) => {
     const nowISO = new Date().toISOString()
     return new Promise((resolve, reject) => {
-      api.multiCall([['Get', {
-        typeName: 'StatusData',
-        search: {
+      api.call('Get', {
+        'typeName': 'DeviceStatusInfo',
+        'search': {
           'deviceSearch': {
             'id': deviceId
           },
-          'diagnosticSearch': {
+          'diagnostics': [{
             'id': 'DiagnosticEngineHoursAdjustmentId'
-          },
-          'fromDate': nowISO,
-          'toDate': nowISO
-        }
-      }], ['Get', {
-        typeName: 'StatusData',
-        search: {
-          'deviceSearch': {
-            'id': deviceId
-          },
-          'diagnosticSearch': {
+          }, {
             'id': 'DiagnosticOdometerAdjustmentId'
-          },
-          'fromDate': nowISO,
-          'toDate': nowISO
-        }
-
-      }], ['Get', {
-        typeName: 'StatusData',
-        search: {
-          'deviceSearch': {
-            'id': deviceId
-          },
-          'diagnosticSearch': {
+          }, {
             'id': 'DiagnosticAux8Id'
-          },
-          'fromDate': nowISO,
-          'toDate': nowISO
+          }]
         }
-
-      }]], function (result) {
-        let esData = result[0][0].data ? result[0][0].data : 0
-        let odoData = result[1][0].data ? result[1][0].data : 0
-        let battData = result[2][0].data ? result[2][0].data : 0
-        let battDate = result[2][0].dateTime ? result[2][0].dateTime : 0
-
-
+      }, function (result) {
+        let sData = result[0].statusData
+        let esData = sData.find(s => s.diagnostic.id === 'DiagnosticEngineHoursAdjustmentId')?.data ?? 0
+        let odoData = sData.find(s => s.diagnostic.id === 'DiagnosticOdometerAdjustmentId')?.data ?? 0
+        let battData = sData.find(s => s.diagnostic.id === 'DiagnosticAux8Id')?.data ?? 0
+        let battDate = sData.find(s => s.diagnostic.id === 'DiagnosticAux8Id')?.dateTime ?? 0
 
         resolve({ engineSeconds: esData, odometer: odoData, battery: !!+battData, batteryDate: battDate })
       }, function (error) {

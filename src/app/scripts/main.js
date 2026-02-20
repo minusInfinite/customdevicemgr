@@ -107,7 +107,7 @@ geotab.addin.customdevicemgr = function () {
           search: {
             fromDate: nowISO,
             groupFilterCondition: Object.keys(userGroups).length === 0 ? undefined : userGroups.groupFilterConditions.length === 1 ? userGroups.groupFilterConditions[0] : userGroups,
-            deviceType: 'CustomDevice'
+            deviceTypes: ['CustomDevice', 'CustomVehicleDevice']
           },
           sort: {
             sortBy: 'name',
@@ -261,17 +261,33 @@ geotab.addin.customdevicemgr = function () {
           }, {
             'id': 'DiagnosticOdometerAdjustmentId'
           }, {
+            'id': 'DiagnosticAux5Id'
+          }, {
+            'id': 'DiagnosticAux6Id'
+          }, {
             'id': 'DiagnosticAux8Id'
-          }]
+          },]
         }
       }, function (result) {
         let sData = result[0].statusData
+        let infoDate = result[0].dateTime
         let esData = sData.find(s => s.diagnostic.id === 'DiagnosticEngineHoursAdjustmentId')?.data ?? 0
         let odoData = sData.find(s => s.diagnostic.id === 'DiagnosticOdometerAdjustmentId')?.data ?? 0
-        let battData = sData.find(s => s.diagnostic.id === 'DiagnosticAux8Id')?.data ?? 0
-        let battDate = sData.find(s => s.diagnostic.id === 'DiagnosticAux8Id')?.dateTime ?? 0
+        let a8battData = sData.find(s => s.diagnostic.id === 'DiagnosticAux8Id')?.data ?? 0
+        let a8battDate = sData.find(s => s.diagnostic.id === 'DiagnosticAux8Id')?.dateTime ?? 0
+        let a5battData = sData.find(s => s.diagnostic.id === 'DiagnosticAux5Id')?.data ?? 0
+        let a5battDate = sData.find(s => s.diagnostic.id === 'DiagnosticAux5Id')?.dateTime ?? 0
+        let a6battData = sData.find(s => s.diagnostic.id === 'DiagnosticAux6Id')?.data ?? 0
+        let a6battDate = sData.find(s => s.diagnostic.id === 'DiagnosticAux6Id')?.dateTime ?? 0
 
-        resolve({ engineSeconds: esData, odometer: odoData, battery: !!+battData, batteryDate: battDate })
+
+        resolve({
+          lastUpdate: infoDate,
+          engineSeconds: esData,
+          odometer: odoData,
+          battery: !!+a8battData || !!+a6battData || !!+a5battData,
+          batteryDate: a8battDate || a6battDate || a5battDate
+        })
       }, function (error) {
         reject(error)
       })
@@ -316,7 +332,7 @@ geotab.addin.customdevicemgr = function () {
         let submitCell = newRow.insertCell()
         let submitButton = document.createElement('button')
 
-        const { engineSeconds, odometer, battery, batteryDate } = await getStatusData(device.id)
+        const { lastUpdate, engineSeconds, odometer, battery, batteryDate } = await getStatusData(device.id)
 
         let engineHours = parseEngineHours(engineSeconds)
         let engineMinutes = parseEngineMinutes(engineSeconds, engineHours)
@@ -338,10 +354,11 @@ geotab.addin.customdevicemgr = function () {
         snCell.classList.add('entities-list__row-cell', 'ellipsis')
         snContent.classList.add('list-column-text')
         snContent.innerText = device.serialNumber
+        snContent.title = `Last Update: ${new Date(Date.parse(lastUpdate)).toLocaleString()}`
         snCell.appendChild(snContent)
         battCell.classList.add('entities-list__row-cell', 'ellipsis')
         battContent.classList.add('list-column-text', 'batteryStatus')
-        battContent.title = `Since: ${new Date(Date.parse(batteryDate)).toLocaleString()}`
+        battContent.title = `Battery Since: ${new Date(Date.parse(batteryDate)).toLocaleString()}`
         battContent.dataset.status = battery ? 'low' : 'good'
         battContent.innerHTML = `<p>${battery ? 'Low' : 'Good'}</p>`
         battCell.appendChild(battContent)

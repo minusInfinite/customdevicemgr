@@ -39,7 +39,7 @@ const state = {
         return this._activeGroups;
     },
     getAdvancedGroupFilter: function () {
-        return this._advancedGroupsFilter;
+        return this._advancedGroupFilter;
     }
 };
 

@@ -269,8 +269,9 @@ geotab.addin.customdevicemgr = function () {
           },]
         }
       }, function (result) {
-        let sData = result[0].statusData
-        let infoDate = result[0].dateTime
+
+        let sData = result[0]?.statusData ?? []
+        let infoDate = result[0]?.dateTime ?? '1970-01-01T00:00:00'
         let esData = sData.find(s => s.diagnostic.id === 'DiagnosticEngineHoursAdjustmentId')?.data ?? 0
         let odoData = sData.find(s => s.diagnostic.id === 'DiagnosticOdometerAdjustmentId')?.data ?? 0
         let a8battData = sData.find(s => s.diagnostic.id === 'DiagnosticAux8Id')?.data ?? 0
@@ -334,6 +335,8 @@ geotab.addin.customdevicemgr = function () {
 
         const { lastUpdate, engineSeconds, odometer, battery, batteryDate } = await getStatusData(device.id)
 
+        let lastUpdateString = new Date(Date.parse(lastUpdate)).toLocaleString()
+        let batteryDateString = new Date(Date.parse(batteryDate)).toLocaleString()
         let engineHours = parseEngineHours(engineSeconds)
         let engineMinutes = parseEngineMinutes(engineSeconds, engineHours)
 
@@ -354,13 +357,13 @@ geotab.addin.customdevicemgr = function () {
         snCell.classList.add('entities-list__row-cell', 'ellipsis')
         snContent.classList.add('list-column-text')
         snContent.innerText = device.serialNumber
-        snContent.title = `Last Update: ${new Date(Date.parse(lastUpdate)).toLocaleString()}`
+        snContent.title = `Last Update: ${lastUpdateString.includes('01/01/1970') ? 'No Communication' : lastUpdateString}`
         snCell.appendChild(snContent)
         battCell.classList.add('entities-list__row-cell', 'ellipsis')
         battContent.classList.add('list-column-text', 'batteryStatus')
-        battContent.title = `Battery Since: ${new Date(Date.parse(batteryDate)).toLocaleString()}`
-        battContent.dataset.status = battery ? 'low' : 'good'
-        battContent.innerHTML = `<p>${battery ? 'Low' : 'Good'}</p>`
+        battContent.title = `Battery Since: ${batteryDateString.includes('01/01/2000') ? 'No Data' : batteryDateString}`
+        battContent.dataset.status = batteryDateString.includes('01/01/2000') ? '--' : battery ? 'low' : 'good'
+        battContent.innerHTML = `<p>${batteryDateString.includes('01/01/2000') ? '--' : battery ? 'Low' : 'Good'}</p>`
         battCell.appendChild(battContent)
         odoCell.classList.add('entities-list__row-cell', 'ellipsis')
         odoContent.classList.add('list-column-numeric', 'geotabFormEditField', 'odometer-control__field-units')
